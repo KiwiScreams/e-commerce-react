@@ -1,0 +1,42 @@
+.about-middle-container
+{
+    margin-top: 74px;
+}
+.about-middle-container h4
+{
+    color: var(--gray-clr);
+    font-size: var(--font-size-24px);
+    margin-bottom: 18px;
+}
+.about-middle-container h2
+{
+    font-size: var(--font-size-48px);
+    width: 80%;
+}
+.about-middle-container .image-container
+{
+    width: 60%;
+}
+.about-middle-container .text-container
+{
+    width: 40%;
+}
+.texts-container
+{
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    margin: auto;
+    margin-top: 50px;
+}
+.texts-container div
+{
+    width: 30%;
+    color: var(--gray-clr);
+}
+.texts-container h4
+{
+    font-size: var(--font-size-32px);
+    color: var(--dark-clr);
+    margin-bottom: 30px;
+}
