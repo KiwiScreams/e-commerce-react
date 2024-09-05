@@ -62,3 +62,12 @@ body
 {
   color: var(--green-clr);
 }
+button, a
+{
+  cursor: pointer;
+}
+button:hover,
+a:hover
+{
+  opacity: 0.8;
+}

@@ -1,5 +1,11 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import logo from "../../../../public/logo.svg.svg";
+import Search from "./search/Search";
+import iconCart from "../../../assets/icons/header icons/icon-cart.svg.svg";
+import iconWishlist from "../../../assets/icons/header icons/icon-heart.svg.svg";
+import iconAccount from "../../../assets/icons/header icons/icon-user.svg.svg";
+import iconRe from "../../../assets/icons/header icons/icon-re.svg.svg";
 const Header = () => {
   return (
     <>
@@ -27,6 +33,42 @@ const Header = () => {
               </li>
               <li>English</li>
               <li>USD</li>
+            </ul>
+          </div>
+        </div>
+        <div className="header-middle">
+          <div className="header-middle-container">
+            <img src={logo} alt="Nest" />
+            <Search />
+            <ul>
+                <li>
+                    <div className="quantity">
+                        <span>0</span>
+                    </div>
+                    <img src={iconRe} alt="" />
+                    Compare
+                </li>
+                <li>
+                    <div className="quantity">
+                        <span>0</span>
+                    </div>
+                    <img src={iconRe} alt="" />
+                    Compare
+                </li>
+                <li>
+                    <div className="quantity">
+                        <span>0</span>
+                    </div>
+                    <img src={iconRe} alt="" />
+                    Compare
+                </li>
+                <li>
+                    <div className="quantity">
+                        <span>0</span>
+                    </div>
+                    <img src={iconRe} alt="" />
+                    Compare
+                </li>
             </ul>
           </div>
         </div>
