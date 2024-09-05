@@ -1,0 +1,55 @@
+.not-found-section
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.not-found-section .not-found-container
+{
+    width: fit-content;
+}
+.not-found-section .image-container
+{
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.not-found-section .image-container img
+{
+    width: 100%;
+}
+.not-found-section h2
+{
+    font-size: var(--font-size-72px);
+    font-weight: bold;
+    color: var(--dark-clr);
+    margin-bottom: 20px;
+    text-align: center;
+}
+.not-found-section p
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--dark-clr);
+    font-size: var(--font-size-20px);
+}
+.not-found-section button
+{
+    background-color: var(--green-clr);
+    font-size: var(--font-size-12px);
+    color: var(--white-clr);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 20px 60px;
+    display: block;
+    margin: auto;
+}
+.not-found-section button:hover
+{
+    background-color: var(--light-green-clr);
+}
