@@ -1,5 +1,6 @@
 import "./AboutUs.css";
 import aboutImage5 from "../../assets/images/about images/about-5.png.png";
+import justImage from "../../assets/images/about images/Main.png";
 const aboutUs = [
   {
     id: 1,
@@ -50,6 +51,38 @@ const AboutUs = () => {
           </div>
         ))}
       </div>
+      <section
+        className="about-sales-quantity"
+        style={{
+          backgroundImage: `linear-gradient(rgba(75, 103, 90, 0.75), rgba(75, 103, 90, 0.75)), url(${justImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="sales">
+          <div className="quantity">
+            <h2>0+</h2>
+            <h5>Glorious years</h5>
+          </div>
+          <div className="quantity">
+            <h2>0+</h2>
+            <h5>Glorious years</h5>
+          </div>
+          <div className="quantity">
+            <h2>0+</h2>
+            <h5>Glorious years</h5>
+          </div>
+          <div className="quantity">
+            <h2>0+</h2>
+            <h5>Glorious years</h5>
+          </div>
+          <div className="quantity">
+            <h2>0+</h2>
+            <h5>Glorious years</h5>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
