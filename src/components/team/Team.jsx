@@ -187,7 +187,7 @@ const Team = () => {
   return (
     <>
       <section className="team-section">
-        <h2>Our Team</h2>
+        <h2 className="team">Our Team</h2>
         <div className="about-top-container">
           <div className="text-container">
             <span className="green-txt" style={{ fontWeight: "bold" }}>

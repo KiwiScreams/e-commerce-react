@@ -9,14 +9,23 @@
 .team-section
 {
     margin-top: 50px;
+    width: 100%;
 }
-.team-section h2
+.team-section .text-container
+{
+    width: 35%;
+}
+.team-section .team-people-container
+{
+    width: 60%;
+}
+.team-section h2.team
 {
     text-align: center;
 }
 .team-section .team-people
 {
-    width: 424px;
+    width: calc(50% - 12px);
     position: relative;
 }
 .team-section .team-people .image-container
