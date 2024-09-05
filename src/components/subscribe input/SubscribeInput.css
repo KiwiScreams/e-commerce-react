@@ -2,6 +2,9 @@
 {
   width: 450px;
   position: relative;
+}
+.carousel-container .input-container-subscire
+{
   top: 70%;
   left: 33%;
   transform: translate(-70%, -33%);

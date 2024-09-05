@@ -1,0 +1,26 @@
+.subscribe-panel-section
+{
+    width: 90%;
+    margin: auto;
+    margin-top: 222px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 83px 78px;
+    margin-bottom: 400px;
+}
+.subscribe-panel-section .content
+{
+    width: 60%;
+}
+.subscribe-panel-section h2
+{
+  color: var(--dark-clr);
+  font-size: var(--font-size-72px);
+  margin-bottom: 30px;
+}
+.subscribe-panel-section p
+{
+  font-size: var(--font-size-30px);
+  color: var(--gray-clr);
+  margin-bottom: 35px;
+}
