@@ -1,5 +1,25 @@
 import "./AboutUs.css";
 import aboutImage5 from "../../assets/images/about images/about-5.png.png";
+const aboutUs = [
+  {
+    id: 1,
+    title: "Who we are",
+    description:
+      "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec acodio orci ultrices in.",
+  },
+  {
+    id: 2,
+    title: "Our history",
+    description:
+      "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec acodio orci ultrices in.",
+  },
+  {
+    id: 3,
+    title: "Our mission",
+    description:
+      "Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in. ellus eros donec acodio orci ultrices in.",
+  },
+];
 const AboutUs = () => {
   return (
     <>
@@ -23,30 +43,12 @@ const AboutUs = () => {
         </div>
       </section>
       <div className="texts-container">
-        <div>
-          <h4>Who we are</h4>
-          <p>
-            Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim
-            ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac
-            odio orci ultrices in.
-          </p>
-        </div>
-        <div>
-          <h4>Who we are</h4>
-          <p>
-            Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim
-            ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac
-            odio orci ultrices in.
-          </p>
-        </div>
-        <div>
-          <h4>Who we are</h4>
-          <p>
-            Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim
-            ut tellus eros donec ac odio orci ultrices in. ellus eros donec ac
-            odio orci ultrices in.
-          </p>
-        </div>
+        {aboutUs.map((aboutus) => (
+          <div key={aboutus.id}>
+            <h4>{aboutus.title}</h4>
+            <p>{aboutus.description}</p>
+          </div>
+        ))}
       </div>
     </>
   );
