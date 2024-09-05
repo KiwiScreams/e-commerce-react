@@ -71,3 +71,17 @@ a:hover
 {
   opacity: 0.8;
 }
+::-webkit-scrollbar
+{
+  display: block;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: var(--green-clr);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-track
+{
+  background-color: var(--white-clr);
+}
