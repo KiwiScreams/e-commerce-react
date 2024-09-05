@@ -1,4 +1,26 @@
 import "./Contact.css";
+const articles = [
+  {
+    id: 1,
+    title: "01. feedback",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+  },
+  {
+    id: 2,
+    title: "02. Employer Services",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+  },
+  {
+    id: 3,
+    title: "03. Billing Inquiries",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+  },
+  {
+    id: 4,
+    title: "04.General Inquiries",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+  },
+];
 const Contact = () => {
   return (
     <>
@@ -17,34 +39,12 @@ const Contact = () => {
             </p>
           </div>
           <div className="articles-container">
-            <div className="article-content">
-              <h4>01. feedback</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-            </div>
-            <div className="article-content">
-              <h4>01. feedback</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-            </div>
-            <div className="article-content">
-              <h4>01. feedback</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-            </div>
-            <div className="article-content">
-              <h4>01. feedback</h4>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              </p>
-            </div>
+            {articles.map((article) => (
+              <div key={article.id} className="article-content">
+                <h4>{article.title}</h4>
+                <p>{article.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
