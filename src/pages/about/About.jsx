@@ -6,7 +6,9 @@ import aboutImage4 from "../../assets/images/about images/about-4.png.png";
 import arrowLeft from "../../assets/icons/shared/arrow-left.svg";
 import arrowRight from "../../assets/icons/shared/arrow-right.svg";
 import { useState, useEffect, useRef } from "react";
+import aboutImage5 from "../../assets/images/about images/about-5.png.png";
 import Service from "../../components/services/Service";
+import AboutUs from "../../components/about us/AboutUs";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -96,6 +98,7 @@ const About = () => {
           </div>
         </div>
         <Service />
+        <AboutUs />
       </section>
     </>
   );

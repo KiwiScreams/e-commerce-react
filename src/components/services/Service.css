@@ -3,6 +3,10 @@
     margin-top: 58px;
     text-align: center;
 }
+.services-section h2
+{
+    margin-bottom: 50px;
+}
 .services-container
 {
     width: 78%;
