@@ -60,3 +60,7 @@
     display: flex;
     gap: 12px;
 }
+.social-icons img
+{
+    filter: invert(1) sepia(100%) saturate(100%) hue-rotate(90deg);
+}
