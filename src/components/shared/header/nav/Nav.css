@@ -57,5 +57,5 @@
     color: var(--gray-clr);
     display: block;
     font-size: var(--font-size-12px);
-    text-align: center;
+    letter-spacing: 0.9px;
 }
