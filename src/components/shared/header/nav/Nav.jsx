@@ -2,6 +2,17 @@ import "./Nav.css";
 import iconBrowse from "../../../../assets/icons/icon-browse.svg";
 import { Link, NavLink } from "react-router-dom";
 import iconHot from "../../../../assets/icons/header icons/icon-hot.svg.svg";
+const navLinks = [
+  { to: "/deals", icon: iconHot, label: "Deals" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/shop", label: "Shop" },
+  { to: "/vendors", label: "Vendors" },
+  { to: "/menu", label: "Mega menu" },
+  { to: "/blog", label: "Blog" },
+  { to: "/pages", label: "Pages" },
+  { to: "/contact", label: "Contact" },
+];
 const Nav = () => {
   return (
     <>
@@ -13,36 +24,14 @@ const Nav = () => {
           </button>
           <nav>
             <ul>
-              <li>
-                <NavLink to="/deals">
-                  <img src={iconHot} alt="" />
-                  Deals
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/about">About</NavLink>
-              </li>
-              <li>
-                <NavLink to="/shop">Shop</NavLink>
-              </li>
-              <li>
-                <NavLink to="/vendors">Vendors</NavLink>
-              </li>
-              <li>
-                <NavLink to="/menu">Mega menu</NavLink>
-              </li>
-              <li>
-                <NavLink to="/blog">Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to="/pages">Pages</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">Contact</NavLink>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <NavLink to={link.to}>
+                    {link.icon && <img src={link.icon} alt="" />}
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
