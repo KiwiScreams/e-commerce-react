@@ -1,0 +1,49 @@
+.contact-section
+{
+    width: 78%;
+    margin: auto;
+    margin-top: 50px;
+}
+.contact-section .container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-section span
+{
+    font-size: var(--font-size-24px);
+    margin-bottom: 18px;
+}
+.contact-section .article
+{
+    width: 40%;
+}
+.contact-section .container .articles-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+}
+.contact-section h2
+{
+    font-size: var(--font-size-48px);
+    color: var(--dark-text);
+    margin-bottom: 30px;
+}
+.contact-section .article p
+{
+    color: var(--gray-clr);
+    margin-bottom: 25px;
+}
+.contact-section .article-content h4
+{
+    color: var(--dark-clr);
+    font-size: var(--font-size-20px);
+    margin-bottom: 22px;
+}
+.contact-section .container .articles-container .article-content
+{
+    width: calc(50% - 15px);
+}
