@@ -15,6 +15,7 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
   );

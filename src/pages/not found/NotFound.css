@@ -8,7 +8,7 @@
 }
 .not-found-section .not-found-container
 {
-    width: fit-content;
+    width: 80%;
 }
 .not-found-section .image-container
 {
@@ -52,4 +52,24 @@
 .not-found-section button:hover
 {
     background-color: var(--light-green-clr);
+}
+@media screen and (max-width: 800px)
+{
+    .not-found-section .not-found-container
+    {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 420px)
+{
+    .not-found-section .not-found-container
+    {
+        width: 100%;
+    }
+    .not-found-section .image-container
+    {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+    }
 }
