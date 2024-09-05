@@ -1,12 +1,12 @@
-import { Routes } from "react-router-dom"
-import Home from "./pages/home/Home"
-import About from "./pages/about/About"
-import Contact from "./pages/contact/Contact"
-import Wishlist from "./pages/wishlist/Wishlist"
-import Cart from "./pages/cart/Cart"
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import Wishlist from "./pages/wishlist/Wishlist";
+import Cart from "./pages/cart/Cart";
+import NotFound from "./pages/not found/NotFound";
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
