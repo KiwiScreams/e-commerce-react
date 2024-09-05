@@ -1,3 +1,5 @@
+import ContactForm from "../../components/contact form/ContactForm";
+import SubscribePanel from "../../components/subscribe panel/SubscribePanel";
 import "./Contact.css";
 const articles = [
   {
@@ -47,7 +49,9 @@ const Contact = () => {
             ))}
           </div>
         </div>
+        <ContactForm />
       </section>
+      <SubscribePanel />
     </>
   );
 };
