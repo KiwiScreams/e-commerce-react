@@ -10,6 +10,7 @@ import aboutImage5 from "../../assets/images/about images/about-5.png.png";
 import Service from "../../components/services/Service";
 import AboutUs from "../../components/about us/AboutUs";
 import Team from "../../components/team/Team";
+import SubscribePanel from "../../components/subscribe panel/SubscribePanel";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -101,6 +102,7 @@ const About = () => {
         <Service />
         <AboutUs />
         <Team />
+        <SubscribePanel />
       </section>
     </>
   );
