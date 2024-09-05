@@ -1,0 +1,127 @@
+.carousel-container {
+  position: relative;
+  width: 70%;
+  height: 538px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+.carousel-container h2 {
+  color: var(--dark-clr);
+  font-size: var(--font-size-72px);
+  margin-bottom: 30px;
+}
+.carousel-container p {
+  font-size: var(--font-size-30px);
+  color: var(--gray-clr);
+  margin-bottom: 35px;
+}
+.carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s;
+}
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.carousel-item.active {
+  opacity: 1;
+}
+.carousel-item.leaving {
+  animation: slide-out 0.5s;
+}
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-content {
+  position: absolute;
+  top: 38%;
+  left: 35%;
+  transform: translate(-38%, -35%);
+}
+.carousel-container .input-container {
+  width: 450px;
+  position: relative;
+}
+.carousel-container .input-container input {
+  background-color: var(--white-clr);
+  color: var(--gray-clr);
+  height: 64px;
+  border-radius: 50px;
+  width: 100%;
+  padding-left: 30px;
+  font-size: var(--font-size-20px);
+}
+.carousel-container .input-container button {
+  background-color: var(--green-clr);
+  color: var(--white-clr);
+  font-size: var(--font-size-20px);
+  height: 64px;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  width: 158px;
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+}
+.prev-button,
+.next-button {
+  background-color: transparent;
+  border: none;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #f2f3f4;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.indicator-button {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid var(--green-clr);
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+.indicator-button.active {
+  background-color: var(--green-clr);
+}
