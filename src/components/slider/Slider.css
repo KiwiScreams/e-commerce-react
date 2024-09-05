@@ -67,6 +67,9 @@
 {
   width: 450px;
   position: relative;
+  top: 70%;
+  left: 33%;
+  transform: translate(-70%, -33%);
 }
 .carousel-container .input-container input
 {
