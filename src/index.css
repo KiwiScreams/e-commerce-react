@@ -1,0 +1,48 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+:root
+{
+  /* COLORS */
+  --green-clr: #3BB77E;
+  --dark-clr: #253D4E;
+  --white-clr: #fff;
+  --black-clr: #000;
+  --gray-clr: #7E7E7E;
+  --light-green-clr: #BCE3C9;
+  --pale-green-clr: #F4F6FA;
+  --cart-btn-clr: #DEF9EC;
+  --pink-clr: #F74B81;
+  --light-blue-clr: #67BCEE;
+  --orange-clr: #F59758;
+  /* FONT SIZE */
+  --font-size-12px: 12px;
+  --font-size-13px: 13px;
+  --font-size-14px: 14px;
+  --font-size-15px: 15px;
+  --font-size-16px: 16px;
+  --font-size-17px: 17px;
+  --font-size-18px: 18px;
+  --font-size-20px: 20px;
+  --font-size-24px: 24px;
+  --font-size-30px: 30px;
+  --font-size-32px: 32px;
+  --font-size-26px: 26px;
+  --font-size-72px: 72px;
+  /* FONT WEIGHT */
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
+}
