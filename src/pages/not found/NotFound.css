@@ -49,10 +49,6 @@
     display: block;
     margin: auto;
 }
-.not-found-section button:hover
-{
-    background-color: var(--light-green-clr);
-}
 @media screen and (max-width: 800px)
 {
     .not-found-section .not-found-container

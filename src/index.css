@@ -17,6 +17,7 @@
   --white-clr: #fff;
   --black-clr: #000;
   --gray-clr: #7E7E7E;
+  --light-gray-clr: #ECECEC;
   --light-green-clr: #BCE3C9;
   --pale-green-clr: #F4F6FA;
   --cart-btn-clr: #DEF9EC;
@@ -50,4 +51,23 @@ body
 {
   width: 100%;
   height: 100vh;
+}
+.flex
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.green-txt
+{
+  color: var(--green-clr);
+}
+button, a
+{
+  cursor: pointer;
+}
+button:hover,
+a:hover
+{
+  opacity: 0.8;
 }

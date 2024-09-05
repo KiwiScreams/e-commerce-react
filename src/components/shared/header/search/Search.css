@@ -1,0 +1,29 @@
+.search-input-section
+{
+    width: 700px;
+    border: 1px solid var(--light-green-clr);
+    border-radius: 4px;
+    padding: 16px 20px;
+    height: fit-content;
+    color: var(--gray-clr);
+    position: relative;
+
+}
+.search-input-section input
+{
+    width: 100%;
+    border: none;
+    color: var(--gray-clr);
+    font-size: var(--font-size-14px);
+}
+.search-input-section .fa-solid
+{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+.search-input-section .fa-solid:hover
+{
+    opacity: 0.8;
+}
