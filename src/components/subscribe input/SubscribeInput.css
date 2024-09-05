@@ -1,0 +1,29 @@
+.input-container-subscire
+{
+  width: 450px;
+  position: relative;
+  top: 70%;
+  left: 33%;
+  transform: translate(-70%, -33%);
+}
+.input-container-subscire input
+{
+  background-color: var(--white-clr);
+  color: var(--gray-clr);
+  height: 64px;
+  border-radius: 50px;
+  width: 100%;
+  padding-left: 30px;
+  font-size: var(--font-size-20px);
+}
+.input-container-subscire button
+{
+  background-color: var(--green-clr);
+  color: var(--white-clr);
+  font-size: var(--font-size-20px);
+  height: 64px;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  width: 158px;
+}
