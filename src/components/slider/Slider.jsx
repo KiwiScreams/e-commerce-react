@@ -5,16 +5,16 @@ import { useState, useEffect } from "react";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [images, setImages] = useState([
-    sliderImage1,
-    sliderImage2,
-  ]);
+  const [images, setImages] = useState([sliderImage1, sliderImage2]);
+  const [leavingIndex, setLeavingIndex] = useState(null);
 
   const handleNext = () => {
+    setLeavingIndex(currentIndex);
     setCurrentIndex((currentIndex + 1) % images.length);
   };
 
   const handlePrev = () => {
+    setLeavingIndex(currentIndex);
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
 
@@ -33,10 +33,9 @@ const Slider = () => {
             key={index}
             className={`carousel-item ${
               index === currentIndex ? "active" : ""
-            }`}
-          >
-            <img src={image} alt={`Image ${index + 1}`} />
-          </div>
+            } ${index === leavingIndex ? "leaving" : ""}`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
         ))}
       </div>
       <div className="carousel-controls">
