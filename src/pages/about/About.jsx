@@ -5,17 +5,30 @@ import aboutImage3 from "../../assets/images/about images/about-3.png.png";
 import aboutImage4 from "../../assets/images/about images/about-4.png.png";
 import arrowLeft from "../../assets/icons/shared/arrow-left.svg";
 import arrowRight from "../../assets/icons/shared/arrow-right.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [aboutImage2, aboutImage3, aboutImage4];
+  const sliderRef = useRef(null);
+
   const handleNext = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
   };
+
   const handlePrev = () => {
     setCurrentIndex((currentIndex - 1 + images.length) % images.length);
   };
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.style.transition = "transform 0.5s ease-in-out";
+      const sliderWidth = sliderRef.current.offsetWidth;
+      const slideWidth = sliderWidth / 3;
+      const newX = -currentIndex * slideWidth;
+      sliderRef.current.style.transform = `translateX(${newX}px)`;
+    }
+  }, [currentIndex]);
 
   return (
     <>
