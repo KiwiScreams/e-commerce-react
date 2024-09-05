@@ -20,6 +20,7 @@ const Slider = () => {
     },
   ]);
   const [leavingIndex, setLeavingIndex] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleNext = () => {
     setLeavingIndex(currentIndex);
@@ -32,14 +33,29 @@ const Slider = () => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      handleNext();
-    }, 3000);
+    let intervalId;
+    if (!isHovered) {
+      intervalId = setInterval(() => {
+        handleNext();
+      }, 3000);
+    }
     return () => clearInterval(intervalId);
-  }, [currentIndex, images]);
+  }, [currentIndex, images, isHovered, handleNext]);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+  };
 
   return (
-    <div className="carousel-container">
+    <div
+      className="carousel-container"
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
       <div className="carousel-inner">
         {images.map((image, index) => (
           <div
