@@ -2,6 +2,8 @@ import "./Slider.css";
 import sliderImage1 from "../../assets/images/slider images/slider-1.png";
 import sliderImage2 from "../../assets/images/slider images/slider-2.png";
 import { useState, useEffect } from "react";
+import arrowLeft from "../../assets/icons/shared/arrow-left.svg";
+import arrowRight from "../../assets/icons/shared/arrow-right.svg";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,16 +55,25 @@ const Slider = () => {
             <div className="carousel-content">
               <h2>{image.title}</h2>
               <p>{image.description}</p>
+              <div className="input-container">
+                <input
+                  type="email"
+                  name="email-subscribe"
+                  id="email-subscribe"
+                  placeholder="Your emaill address"
+                />
+                <button>Subscribe</button>
+              </div>
             </div>
           </div>
         ))}
       </div>
       <div className="carousel-controls">
         <button className="prev-button" onClick={handlePrev}>
-          Prev
+          <img src={arrowLeft} alt="" />
         </button>
         <button className="next-button" onClick={handleNext}>
-          Next
+          <img src={arrowRight} alt="" />
         </button>
       </div>
       <div className="carousel-indicators">
