@@ -6,6 +6,7 @@ import iconCart from "../../../assets/icons/header icons/icon-cart.svg.svg";
 import iconWishlist from "../../../assets/icons/header icons/icon-heart.svg.svg";
 import iconAccount from "../../../assets/icons/header icons/icon-user.svg.svg";
 import iconRe from "../../../assets/icons/header icons/icon-re.svg.svg";
+import Nav from "./nav/Nav";
 const headerLinks = [
   {
     path: "/compare",
@@ -82,6 +83,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
+        <Nav />
       </header>
     </>
   );
