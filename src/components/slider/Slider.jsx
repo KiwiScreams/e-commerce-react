@@ -1,7 +1,7 @@
 import "./Slider.css";
 import sliderImage1 from "../../assets/images/slider images/slider-1.png";
 import sliderImage2 from "../../assets/images/slider images/slider-2.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import arrowLeft from "../../assets/icons/shared/arrow-left.svg";
 import arrowRight from "../../assets/icons/shared/arrow-right.svg";
 
@@ -22,6 +22,9 @@ const Slider = () => {
   const [leavingIndex, setLeavingIndex] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  const inputRef = useRef(null);
+  const buttonRef = useRef(null);
+
   const handleNext = () => {
     setLeavingIndex(currentIndex);
     setCurrentIndex((currentIndex + 1) % images.length);
@@ -41,6 +44,12 @@ const Slider = () => {
     }
     return () => clearInterval(intervalId);
   }, [currentIndex, images, isHovered, handleNext]);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [currentIndex]);
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -71,18 +80,19 @@ const Slider = () => {
             <div className="carousel-content">
               <h2>{image.title}</h2>
               <p>{image.description}</p>
-              <div className="input-container">
-                <input
-                  type="email"
-                  name="email-subscribe"
-                  id="email-subscribe"
-                  placeholder="Your emaill address"
-                />
-                <button>Subscribe</button>
-              </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="input-container">
+        <input
+          type="email"
+          ref={inputRef}
+          placeholder="Your email address"
+        />
+        <button>
+          Subscribe
+        </button>
       </div>
       <div className="carousel-controls">
         <button className="prev-button" onClick={handlePrev}>
