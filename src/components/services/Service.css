@@ -1,0 +1,43 @@
+.services-section
+{
+    margin-top: 58px;
+    text-align: center;
+}
+.services-container
+{
+    width: 78%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.services-container .service
+{
+    padding: 50px 30px;
+    border: 1px solid #ECECEC;
+    border-radius: 15px;
+    width: 420px;
+}
+.services-container .service img
+{
+    display: block;
+    margin: auto;
+    margin-bottom: 44px;
+}
+.services-container .service h3
+{
+    color: var(--dark-clr);
+    font-size: var(--font-size-24px);
+    margin-bottom: 30px;
+}
+.services-container .service p
+{
+    color: var(--gray-clr);
+    font-size: var(--font-size-17px);
+    margin-bottom: 34px;
+}
+.services-container .service a
+{
+    color: var(--green-clr);
+}
