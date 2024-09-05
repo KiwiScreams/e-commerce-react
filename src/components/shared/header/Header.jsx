@@ -6,6 +6,31 @@ import iconCart from "../../../assets/icons/header icons/icon-cart.svg.svg";
 import iconWishlist from "../../../assets/icons/header icons/icon-heart.svg.svg";
 import iconAccount from "../../../assets/icons/header icons/icon-user.svg.svg";
 import iconRe from "../../../assets/icons/header icons/icon-re.svg.svg";
+const headerLinks = [
+  {
+    path: "/compare",
+    name: "Compare",
+    image: iconRe,
+    quantity: 0,
+  },
+  {
+    path: "/wishlist",
+    name: "Wishlist",
+    image: iconWishlist,
+    quantity: 0,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    image: iconCart,
+    quantity: 0,
+  },
+  {
+    path: "/account",
+    name: "Account",
+    image: iconAccount,
+  },
+];
 const Header = () => {
   return (
     <>
@@ -41,34 +66,19 @@ const Header = () => {
             <img src={logo} alt="Nest" />
             <Search />
             <ul>
-                <li>
-                    <div className="quantity">
+              {headerLinks.map((link, index) => (
+                <li key={index} className="nav">
+                  {
+                    <Link to={link.path}>
+                      <div className="quantity">
                         <span>0</span>
-                    </div>
-                    <img src={iconRe} alt="" />
-                    Compare
+                      </div>
+                      <img src={link.image} alt="" />
+                      {link.name}
+                    </Link>
+                  }
                 </li>
-                <li>
-                    <div className="quantity">
-                        <span>0</span>
-                    </div>
-                    <img src={iconRe} alt="" />
-                    Compare
-                </li>
-                <li>
-                    <div className="quantity">
-                        <span>0</span>
-                    </div>
-                    <img src={iconRe} alt="" />
-                    Compare
-                </li>
-                <li>
-                    <div className="quantity">
-                        <span>0</span>
-                    </div>
-                    <img src={iconRe} alt="" />
-                    Compare
-                </li>
+              ))}
             </ul>
           </div>
         </div>

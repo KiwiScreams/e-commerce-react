@@ -60,11 +60,14 @@ header .header-middle-container ul
     display: flex;
     gap: 20px;
 }
-header .header-middle-container ul li
+header .header-middle-container ul li.nav
 {
     position: relative;
-    color: var(--gray-clr);
     font-size: var(--font-size-16px);
+}
+header .header-middle-container ul li.nav a
+{
+    color: var(--gray-clr);
 }
 header .header-middle-container ul li .quantity
 {
