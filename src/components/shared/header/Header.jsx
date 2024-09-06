@@ -69,15 +69,15 @@ const Header = () => {
             <ul>
               {headerLinks.map((link, index) => (
                 <li key={index} className="nav">
-                  {
-                    <Link to={link.path}>
+                  <Link to={link.path}>
+                    {link.name === "Account" ? null : (
                       <div className="quantity">
                         <span>0</span>
                       </div>
-                      <img src={link.image} alt="" />
-                      {link.name}
-                    </Link>
-                  }
+                    )}
+                    <img src={link.image} alt="" />
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
