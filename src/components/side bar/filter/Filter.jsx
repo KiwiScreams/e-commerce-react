@@ -20,14 +20,16 @@ const Filter = () => {
         const threshold = 5;
 
         if (type === "left") {
-          if (x < thumbRight && Math.abs(x - thumbLeft) > threshold) {
-            setThumbLeft(x);
-            setMinPrice(Math.round((x / rect.width) * 100));
+          const newX = Math.max(0, Math.min(x, thumbRight));
+          if (Math.abs(newX - thumbLeft) > threshold) {
+            setThumbLeft(newX);
+            setMinPrice(Math.round((newX / rect.width) * 1000));
           }
         } else {
-          if (x > thumbLeft && Math.abs(x - thumbRight) > threshold) {
-            setThumbRight(x);
-            setMaxPrice(Math.round((x / rect.width) * 100));
+          const newX = Math.max(thumbLeft, Math.min(x, rect.width));
+          if (Math.abs(newX - thumbRight) > threshold) {
+            setThumbRight(newX);
+            setMaxPrice(Math.round((newX / rect.width) * 1000));
           }
         }
       }
@@ -57,9 +59,9 @@ const Filter = () => {
               id="slider"
               style={{
                 position: "relative",
-                width: "100%",
+                maxWidth: "200px",
                 height: "6px",
-                backgroundColor: "#D6D7D9",
+                backgroundColor: "#ccc", // Change to gray
               }}
             >
               <div
@@ -68,8 +70,9 @@ const Filter = () => {
                   top: 0,
                   left: 0,
                   width: `${thumbLeft}px`,
+                  maxWidth: "200px",
                   height: "6px",
-                  backgroundColor: "#3BB77E",
+                  backgroundColor: "#ccc", // Change to gray
                 }}
               />
               <div
@@ -77,9 +80,12 @@ const Filter = () => {
                   position: "absolute",
                   top: 0,
                   left: `${thumbLeft}px`,
-                  width: `${thumbRight - thumbLeft}px`,
+                  width: `${Math.min(
+                    thumbRight - thumbLeft,
+                    200 - thumbLeft
+                  )}px`, // Add this line
                   height: "6px",
-                  backgroundColor: "#3BB77E",
+                  backgroundColor: "#ccc", // Change to gray
                 }}
               />
               <div
@@ -87,33 +93,35 @@ const Filter = () => {
                   position: "absolute",
                   top: 0,
                   left: `${thumbRight}px`,
-                  width: `${100 - thumbRight}px`,
+                  width: `${Math.min(200 - thumbRight, 200 - thumbRight)}px`, // Update width calculation
                   height: "6px",
-                  backgroundColor: "#333",
+                  backgroundColor: "#ccc", // Change to gray
                 }}
               />
               <div
+                className="thumb left-thumb"
                 style={{
                   position: "absolute",
-                  top: "-10px",
+                  top: "-5px",
                   left: `${thumbLeft}px`,
-                  width: "20px",
-                  height: "20px",
+                  width: "10px",
+                  height: "10px",
                   borderRadius: "50%",
-                  backgroundColor: "#3BB77E",
+                  backgroundColor: "#34C759", // Change to green
                   cursor: "pointer",
                 }}
                 onMouseDown={(e) => handleMouseDown(e, "left")}
               />
               <div
+                className="thumb right-thumb"
                 style={{
                   position: "absolute",
-                  top: "-10px",
+                  top: "-5px",
                   left: `${thumbRight}px`,
-                  width: "20px",
-                  height: "20px",
+                  width: "10px",
+                  height: "10px",
                   borderRadius: "50%",
-                  backgroundColor: "#3BB77E",
+                  backgroundColor: "#34C759", // Change to green
                   cursor: "pointer",
                 }}
                 onMouseDown={(e) => handleMouseDown(e, "right")}
