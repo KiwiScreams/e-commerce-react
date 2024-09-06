@@ -2,8 +2,8 @@ import "./Filter.css";
 import { useState } from "react";
 
 const Filter = () => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(100);
+  const [minPrice, setMinPrice] = useState(500);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [thumbLeft, setThumbLeft] = useState(0);
   const [thumbRight, setThumbRight] = useState(100);
 
@@ -12,36 +12,34 @@ const Filter = () => {
     const rect = slider.getBoundingClientRect();
     const x = e.clientX - rect.left;
 
-    if (type === "left") {
-      setThumbLeft(x);
-      setMinPrice(Math.round((x / rect.width) * 100));
-    } else {
-      setThumbRight(x);
-      setMaxPrice(Math.round((x / rect.width) * 100));
-    }
+    let isDragging = false;
 
     const handleMouseMove = (e) => {
-      const x = e.clientX - rect.left;
-      const threshold = 5;
+      if (isDragging) {
+        const x = e.clientX - rect.left;
+        const threshold = 5;
 
-      if (type === "left") {
-        if (x < thumbRight && Math.abs(x - thumbLeft) > threshold) {
-          setThumbLeft(x);
-          setMinPrice(Math.round((x / rect.width) * 100));
-        }
-      } else {
-        if (x > thumbLeft && Math.abs(x - thumbRight) > threshold) {
-          setThumbRight(x);
-          setMaxPrice(Math.round((x / rect.width) * 100));
+        if (type === "left") {
+          if (x < thumbRight && Math.abs(x - thumbLeft) > threshold) {
+            setThumbLeft(x);
+            setMinPrice(Math.round((x / rect.width) * 100));
+          }
+        } else {
+          if (x > thumbLeft && Math.abs(x - thumbRight) > threshold) {
+            setThumbRight(x);
+            setMaxPrice(Math.round((x / rect.width) * 100));
+          }
         }
       }
     };
 
     const handleMouseUp = () => {
+      isDragging = false;
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
 
+    isDragging = true;
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   };
@@ -61,7 +59,7 @@ const Filter = () => {
                 position: "relative",
                 width: "100%",
                 height: "6px",
-                backgroundColor: "#ccc",
+                backgroundColor: "#D6D7D9",
               }}
             >
               <div
@@ -71,7 +69,7 @@ const Filter = () => {
                   left: 0,
                   width: `${thumbLeft}px`,
                   height: "6px",
-                  backgroundColor: "#333",
+                  backgroundColor: "#3BB77E",
                 }}
               />
               <div
@@ -81,7 +79,7 @@ const Filter = () => {
                   left: `${thumbLeft}px`,
                   width: `${thumbRight - thumbLeft}px`,
                   height: "6px",
-                  backgroundColor: "#666",
+                  backgroundColor: "#3BB77E",
                 }}
               />
               <div
@@ -102,7 +100,7 @@ const Filter = () => {
                   width: "20px",
                   height: "20px",
                   borderRadius: "50%",
-                  backgroundColor: "#fff",
+                  backgroundColor: "#3BB77E",
                   cursor: "pointer",
                 }}
                 onMouseDown={(e) => handleMouseDown(e, "left")}
@@ -115,7 +113,7 @@ const Filter = () => {
                   width: "20px",
                   height: "20px",
                   borderRadius: "50%",
-                  backgroundColor: "#fff",
+                  backgroundColor: "#3BB77E",
                   cursor: "pointer",
                 }}
                 onMouseDown={(e) => handleMouseDown(e, "right")}
