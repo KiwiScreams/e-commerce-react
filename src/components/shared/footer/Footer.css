@@ -15,12 +15,6 @@ footer p.under-logo
     display: block;
     font-size: var(--font-size-17px);
 }
-footer .footer-top
-{
-    width: 88%;
-    margin: auto;
-    background-color: bisque;
-}
 footer ul
 {
     display: flex;
@@ -34,7 +28,37 @@ footer ul li
     gap: 8px;
     align-items: center;
 }
+footer .footer-top
+{
+    display: flex;
+    width: 88%;
+    margin: auto;
+    background-color: bisque;
+    justify-content: space-between;
+}
 footer ul li span
 {
     font-weight: bold;
+}
+.footer-center-container
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.footer-center-container ul li a
+{
+    font-size: var(--font-size-15px);
+    color: var(--dark-clr);
+}
+.footer-center-container ul li a.active-link
+{
+    color: var(--green-clr);
+}
+.footer-center-container ul li:nth-child(1)
+{
+    font-size: 40px;
+    font-size: var(--font-size-24px);
+    font-weight: bold;
+    margin-bottom: 20px;
 }

@@ -6,6 +6,7 @@ import iconLocation from "../../../assets/icons/footer icons/icon-location.svg.s
 import iconHeadphone from "../../../assets/icons/footer icons/icon-contact.svg.svg";
 import iconEmail from "../../../assets/icons/footer icons/icon-email.svg.svg";
 import iconClock from "../../../assets/icons/footer icons/icon-clock.svg.svg";
+import { NavLink } from "react-router-dom";
 const footerContacts = [
   {
     id: 1,
@@ -32,12 +33,54 @@ const footerContacts = [
     description: "10:00 - 18:00, Mon - Sat",
   },
 ];
+const ulColumn = [
+  [
+    { text: "Company" },
+    { text: "About Us", href: "/about" },
+    { text: "Delivery Information", href: "/notfound" },
+    { text: "Privacy Policy", href: "/notfound" },
+    { text: "Terms & Conditions", href: "/notfound" },
+    { text: "Contact Us", href: "/contact" },
+    { text: "Support Center", href: "/notfound" },
+    { text: "Careers", href: "/notfound" },
+  ],
+  [
+    { text: "Account" },
+    { text: "Sign In", href: "/about" },
+    { text: "View Cart", href: "/notfound" },
+    { text: "My Wishlist", href: "/notfound" },
+    { text: "Track My Order", href: "/notfound" },
+    { text: "Help Ticket", href: "/contact" },
+    { text: "Shipping Details", href: "/notfound" },
+    { text: "Compare products", href: "/notfound" },
+  ],
+  [
+    { text: "Corporate" },
+    { text: "Become a Vendor", href: "/about" },
+    { text: "Affiliate Program", href: "/notfound" },
+    { text: "Farm Business", href: "/notfound" },
+    { text: "Farm Careers", href: "/notfound" },
+    { text: "Our Suppliers", href: "/contact" },
+    { text: "Accessibility", href: "/notfound" },
+    { text: "Promotions", href: "/notfound" },
+  ],
+  [
+    { text: "Popular" },
+    { text: "Milk & Flavoured Milk", href: "/about" },
+    { text: "Butter and Margarine", href: "/notfound" },
+    { text: "Eggs Substitutes", href: "/notfound" },
+    { text: "Marmalades", href: "/notfound" },
+    { text: "Sour Cream and Dips", href: "/contact" },
+    { text: "Tea & Kombucha", href: "/notfound" },
+    { text: "Cheese", href: "/notfound" },
+  ],
+];
 const Footer = () => {
   return (
     <>
       <footer>
         <div className="footer-top">
-          <div className="footer-container">
+          <div className="footer-left-container">
             <img src={logo} alt="" className="logo" />
             <p className="under-logo">Awesome grocery store website template</p>
             <ul>
@@ -51,6 +94,28 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="footer-center-container">
+            {ulColumn.map((list, index) => (
+              <ul key={index}>
+                {list.map((item, index) => (
+                  <li key={index}>
+                    {item.href ? (
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? "active-link" : ""
+                        }
+                        to={item.href}
+                      >
+                        {item.text}
+                      </NavLink>
+                    ) : (
+                      <span>{item.text}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ))}
           </div>
         </div>
       </footer>
