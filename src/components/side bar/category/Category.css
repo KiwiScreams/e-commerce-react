@@ -1,0 +1,14 @@
+.category-section
+{
+    width: fit-content;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ECECEC;
+}
+.category-section h2
+{
+    color: var(--dark-clr);
+    font-weight: bold;
+    font-size: var(--font-size-24px);
+    margin-bottom: 18px;
+}
