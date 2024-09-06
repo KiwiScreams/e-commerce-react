@@ -5,6 +5,13 @@ import twitter from "../../../../assets/icons/footer icons/icon-twitter-white.sv
 import instagram from "../../../../assets/icons/footer icons/icon-instagram-white.svg.svg";
 import pinterest from "../../../../assets/icons/footer icons/icon-pinterest-white.svg.svg";
 import youtube from "../../../../assets/icons/footer icons/icon-youtube-white.svg.svg";
+const socialMedia = [
+  { id: 1, src: facebook, href: "#" },
+  { id: 2, src: twitter,  href: "#" },
+  { id: 3, src: instagram, href: "#" },
+  { id: 4, src: pinterest, href: "#" },
+  { id: 5, src: youtube, href: "#" },
+];
 const FooterBottom = () => {
   return (
     <>
@@ -33,33 +40,15 @@ const FooterBottom = () => {
           </div>
         </div>
         <div>
-          <div className="flex" style={{ gap: "8px" }}>
+          <div className="flex" style={{ gap: "5px" }}>
             <h6>Follow Us</h6>
-            <div className="flex" style={{ gap: "5px" }}>
-              <a href="#">
-                <img src={facebook} alt="" />
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <img src={twitter} alt="" />
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <img src={instagram} alt="" />
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <img src={pinterest} alt="" />
-              </a>
-            </div>
-            <div>
-              <a href="#">
-                <img src={youtube} alt="" />
-              </a>
-            </div>
+            {socialMedia.map((media) => (
+              <div key={media.id}>
+                <a href={media.href}>
+                  <img src={media.src} />
+                </a>
+              </div>
+            ))}
           </div>
           <p>Up to 15% discount on your first subscribe</p>
         </div>
