@@ -21,6 +21,12 @@ footer .footer-top
     margin: auto;
     background-color: bisque;
 }
+footer ul
+{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 footer ul li
 {
     color: var(--dark-clr);
