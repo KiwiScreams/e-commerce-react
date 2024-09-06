@@ -7,6 +7,7 @@ import iconHeadphone from "../../../assets/icons/footer icons/icon-contact.svg.s
 import iconEmail from "../../../assets/icons/footer icons/icon-email.svg.svg";
 import iconClock from "../../../assets/icons/footer icons/icon-clock.svg.svg";
 import { NavLink } from "react-router-dom";
+import FooterBottom from "./footer bottom/FooterBottom";
 const footerContacts = [
   {
     id: 1,
@@ -121,21 +122,21 @@ const Footer = () => {
             <ul>
               <li>Install App</li>
               <li>
-                <NavLink
-                  className={({ isActive }) => (isActive ? "active-link" : "")}
-                >
+                <a href="#">
                   <img src={appStore} alt="" />
-                </NavLink>
-                <NavLink
+                </a>
+                <a
+                  href="#"
                   className={({ isActive }) => (isActive ? "active-link" : "")}
                 >
                   <img src={googlePlay} alt="" />
-                </NavLink>
+                </a>
               </li>
-              <li style={{marginTop: "40px"}}>Secured Payment Gateways</li>
+              <li style={{ marginTop: "40px" }}>Secured Payment Gateways</li>
             </ul>
           </div>
         </div>
+        <FooterBottom />
       </footer>
     </>
   );
