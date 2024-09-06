@@ -7,8 +7,10 @@ const Category = () => {
         <h2>Category</h2>
         <ul>
           {categories.map((category) => (
-            <li key={category.id}>
-              <img src={category.image} alt="" />
+            <li key={category.id} className="category-li">
+              <div className="image-container">
+                <img src={category.image} alt="" />
+              </div>
               {category.title}
             </li>
           ))}
