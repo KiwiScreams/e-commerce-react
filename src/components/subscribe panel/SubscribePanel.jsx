@@ -11,8 +11,8 @@ const SubscribePanel = () => {
         <div className="content">
           <h2>Stay home & get your daily needs from our shop</h2>
           <p>
-            Start You'r Daily Shopping with
-            <span className="green-txt">Nest Mart</span>
+            Start You'r Daily Shopping with 
+            <span className="green-txt"> Nest Mart</span>
           </p>
         </div>
         <SubscribeInput />
