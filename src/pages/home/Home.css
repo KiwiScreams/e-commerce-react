@@ -1,0 +1,7 @@
+.home-section
+{
+    width: 88%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
