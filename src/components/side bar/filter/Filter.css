@@ -1,0 +1,28 @@
+.filter-section
+{
+    width: fit-content;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ECECEC;
+    width: 300px;
+}
+.filter-section h2
+{
+    color: var(--dark-clr);
+    font-weight: bold;
+    font-size: var(--font-size-24px);
+    margin-bottom: 30px;
+    width: fit-content;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--green-clr);
+}
+.filter-section .price-range #slider
+{
+    margin-bottom: 24px;
+    width: 100%;
+}
+.filter-section output
+{
+    color: var(--gray-clr);
+    font-weight: bold;
+}

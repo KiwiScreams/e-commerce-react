@@ -5,6 +5,7 @@
     border-radius: 15px;
     border: 1px solid #ECECEC;
     width: 300px;
+    margin-bottom: 30px;
 }
 .category-section h2
 {
@@ -12,6 +13,9 @@
     font-weight: bold;
     font-size: var(--font-size-24px);
     margin-bottom: 18px;
+    width: fit-content;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--green-clr);
 }
 .category-section li.category-li .image-container
 {
