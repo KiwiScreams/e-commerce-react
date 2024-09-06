@@ -117,6 +117,24 @@ const Footer = () => {
               </ul>
             ))}
           </div>
+          <div className="footer-right-container">
+            <ul>
+              <li>Install App</li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  <img src={appStore} alt="" />
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) => (isActive ? "active-link" : "")}
+                >
+                  <img src={googlePlay} alt="" />
+                </NavLink>
+              </li>
+              <li style={{marginTop: "40px"}}>Secured Payment Gateways</li>
+            </ul>
+          </div>
         </div>
       </footer>
     </>
