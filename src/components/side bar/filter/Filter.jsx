@@ -22,14 +22,15 @@ const Filter = () => {
 
     const handleMouseMove = (e) => {
       const x = e.clientX - rect.left;
+      const threshold = 5;
 
       if (type === "left") {
-        if (x < thumbRight) {
+        if (x < thumbRight && Math.abs(x - thumbLeft) > threshold) {
           setThumbLeft(x);
           setMinPrice(Math.round((x / rect.width) * 100));
         }
       } else {
-        if (x > thumbLeft) {
+        if (x > thumbLeft && Math.abs(x - thumbRight) > threshold) {
           setThumbRight(x);
           setMaxPrice(Math.round((x / rect.width) * 100));
         }
