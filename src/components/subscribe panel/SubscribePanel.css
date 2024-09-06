@@ -1,15 +1,15 @@
 .subscribe-panel-section
 {
-    width: 90%;
-    margin: auto;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    padding: 83px 78px;
-    margin-bottom: 400px;
+  width: 90%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 83px 78px;
+  margin-bottom: 400px;
 }
 .subscribe-panel-section .content
 {
-    width: 60%;
+  width: 60%;
 }
 .subscribe-panel-section h2
 {

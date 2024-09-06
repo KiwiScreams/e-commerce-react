@@ -50,3 +50,35 @@
 {
     width: calc(50% - 15px);
 }
+.contact-section .maps-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.contact-section .maps-container .map h3
+{
+    color: var(--green-clr);
+    font-size: var(--font-size-24px);
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.contact-section .maps-container .map p
+{
+    margin-bottom: 20px;
+}
+.contact-section .maps-container .map button
+{
+    background-color: var(--green-clr);
+    color: var(--white-clr);
+    border-radius: 4px;
+    font-size: var(--font-size-12px);
+    display: flex;
+    gap: 5px;
+    width: 116px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
