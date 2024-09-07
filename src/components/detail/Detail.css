@@ -191,7 +191,6 @@
 }
 .detail-section ul li
 {
-    display: block;
-    margin: 10px;
-
+    gap: 20px;
+    display: flex;
 }

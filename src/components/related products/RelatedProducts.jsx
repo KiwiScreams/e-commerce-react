@@ -1,14 +1,24 @@
 import "./RelatedProducts.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 
-const RelatedProducts = () => {
-  
+const RelatedProducts = ({ relatedProducts }) => {
   return (
-    <div className="related-products-container">
-      <h2>RelatedProducts</h2>
-    </div>
+    <section className="related">
+      <h2>Related Products</h2>
+      <div className="related-products">
+        {relatedProducts && relatedProducts.length > 0 ? (
+          relatedProducts.map((product, index) => (
+            <div key={product.id} className="related-product">
+              <img src={product.image} alt="" />
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
+              <h1>{product.id}</h1>
+            </div>
+          ))
+        ) : (
+          <p>No similar products found in this category.</p>
+        )}
+      </div>
+    </section>
   );
 };
 
