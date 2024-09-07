@@ -7,7 +7,6 @@ import arrowBottom from "../../assets/icons/arrow-bottom.svg";
 import heartIcon from "../../assets/icons/heart.svg";
 import arrowsIcon from "../../assets/icons/arrows.svg";
 import RelatedProducts from "../related products/RelatedProducts";
-import DetailContainer from "../../pages/detail/DetailContainer";
 
 const Detail = () => {
   const { id } = useParams();
@@ -188,23 +187,6 @@ const Detail = () => {
               <p>{data.additionalInfo?.[5]?.warnings}</p>
             </div>
           </section>
-          {/* <section className="related">
-            <h2>Related Products</h2>
-            <div className="related-products">
-              {relatedProducts && relatedProducts.length > 0 ? (
-                relatedProducts.map((product, index) => (
-                  <div key={product.id} className="related-product">
-                    <img src={product.image} alt="" />
-                    <h3>{product.name}</h3>
-                    <p>${product.price}</p>
-                    <h1>{product.id}</h1>
-                  </div>
-                ))
-              ) : (
-                <p>No similar products found in this category.</p>
-              )}
-            </div>
-          </section> */}
         </>
       ) : (
         <div>loading</div>
