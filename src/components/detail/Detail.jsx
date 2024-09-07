@@ -13,6 +13,7 @@ const Detail = () => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const originalPrice = data.price;
   const discountPercentage = data.discount;
@@ -26,6 +27,9 @@ const Detail = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
+  };
+  const handleSizeChange = (size) => {
+    setSelectedSize(size);
   };
   return (
     <>
@@ -85,7 +89,13 @@ const Detail = () => {
                 <span>Size / Weight: </span>
                 {data.sizes &&
                   data.sizes.map((size, index) => (
-                    <span key={index} className="size">
+                    <span
+                      key={index}
+                      className={`size ${
+                        selectedSize === size ? "active-size" : ""
+                      }`}
+                      onClick={() => handleSizeChange(size)}
+                    >
                       {size}
                     </span>
                   ))}
