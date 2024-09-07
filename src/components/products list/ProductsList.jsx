@@ -3,6 +3,7 @@ import Product from "../product/Product";
 import "./ProductsList.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import RelatedProducts from "../related products/RelatedProducts";
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -22,8 +23,7 @@ const ProductsList = () => {
             </div>
           ))}
         </div>
-      </section>
-    </>
+      </section>    </>
   );
 };
 export default ProductsList;
