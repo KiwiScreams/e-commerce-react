@@ -128,16 +128,23 @@ const Detail = () => {
           <div className="detail-bottom-container">
             <p>{data.additionalInfo?.[0]?.description}</p>
             <ul>
-              <li>
-                <span>
-                  Type Of Packing: {data.additionalInfo?.[1]?.details[0].color}
-                </span>
-                <span>Color: {data.additionalInfo?.[1]?.details[1].color}</span>
-                <span>
-                  Quantity Per Case:
-                  {data.additionalInfo?.[1]?.details[2].color}
-                </span>
-              </li>
+              {data.additionalInfo &&
+                data.additionalInfo.map(
+                  (item, index) =>
+                    item.details &&
+                    item.details.map((detail, detailIndex) => (
+                      <li key={detailIndex}>
+                        <span className="green-txt">
+                          {Object.keys(detail).map((key, index) => (
+                            <span key={index}>
+                              {key.charAt(0).toUpperCase() + key.slice(1)}:{" "}
+                              {detail[key]}
+                            </span>
+                          ))}
+                        </span>
+                      </li>
+                    ))
+                )}
             </ul>
             <h2>Packaging & Delivery</h2>
             <p>{data.additionalInfo?.[2]?.PackagingDelivery}</p>
