@@ -125,6 +125,29 @@ const Detail = () => {
               </div>
             </div>
           </div>
+          <div className="detail-bottom-container">
+            <p>{data.additionalInfo?.[0]?.description}</p>
+            <ul>
+              <li>
+                <span>
+                  Type Of Packing: {data.additionalInfo?.[1]?.details[0].color}
+                </span>
+                <span>Color: {data.additionalInfo?.[1]?.details[1].color}</span>
+                <span>
+                  Quantity Per Case:
+                  {data.additionalInfo?.[1]?.details[2].color}
+                </span>
+              </li>
+            </ul>
+            <h2>Packaging & Delivery</h2>
+            <p>{data.additionalInfo?.[2]?.PackagingDelivery}</p>
+            <h2>Suggested Use</h2>
+            <p>{data.additionalInfo?.[3]?.SuggestedUse}</p>
+            <h2>Other Ingredients</h2>
+            <p>{data.additionalInfo?.[4]?.Ingredients}</p>
+            <h2>Warnings</h2>
+            <p>{data.additionalInfo?.[5]?.warnings}</p>
+          </div>
         </section>
       ) : (
         <div>loading</div>
