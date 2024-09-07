@@ -3,8 +3,9 @@
     width: fit-content;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ECECEC;
+    border: 1px solid #ededed;
     width: 300px;
+    margin-bottom: 30px;
 }
 .filter-section h2
 {
