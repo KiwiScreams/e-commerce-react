@@ -117,6 +117,30 @@
     color: var(--white-clr);
     border-radius: 5px;
     margin-right: 2px;
+    background-color: transparent;
+    color: var(--gray-clr);
+    cursor: pointer;
+}
+.detail-section div.size .size.active-size
+{
+    background-color: var(--green-clr);
+    color: var(--white-clr);
+}
+.detail-section button.cart
+{
+    background-color: var(--green-clr);
+    color: var(--white-clr);
+    font-size: var(--font-size-16px);
+    font-weight: bold;
+    border-radius: 5px;
+    width: 160px;
+    height: 50px;
+}
+.detail-section .btn
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
 }
 .detail-section .prod-quantity
 {
@@ -147,4 +171,27 @@
     cursor: pointer;
     padding: 5px;
     background-color: transparent;
+}
+.detail-section h2
+{
+    color: var(--dark-clr);
+    font-size: var(--font-size-24px);
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--green-clr);
+    width: fit-content;
+}
+.detail-section p,
+.detail-section ul li
+{
+    color: var(--gray-clr);
+    font-size: var(--font-size-16px);
+    margin-bottom: 30px;
+}
+.detail-section ul li
+{
+    display: block;
+    margin: 10px;
+
 }

@@ -26,35 +26,89 @@
       "more": "Hot",
       "rating": 5,
       "company": "NextFood",
-      "sizes": ["60g", "80g", "100g", "120g"]
+      "sizes": ["60g", "80g", "100g", "120g"],
+      "additionalInfo": [
+        {
+          "description": "Uninhibited carnally hired played whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart."
+        },
+        {
+          "details": [
+            { "typeOfPacking": "bottle" },
+            { "color": "blue" },
+            { "quantityPerCase": "100ml" }
+          ]
+        },
+        {
+          "PackagingDelivery": "Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly rigid after due oneassenting regarding censorious while occasional or this more crane went more as this less much amid overhung anathematic because muchheld one exuberantly sheep goodness so where rat wry well concomitantly."
+        },
+        { "SuggestedUse": "hjkhjk" },
+        { "Ingredients": "hjkhjk" },
+        { "warnings": "bad" }
+      ]
     },
     {
       "id": 2,
       "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-      "description": "lorem",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
       "discount": 10,
       "price": 99.5,
       "image": "../src/assets/images/products/product-img.png",
       "catagory": "Snack",
-      "color": "#67BCEE",
-      "more": "Sale",
+      "color": "#F74B81",
+      "more": "Hot",
       "rating": 5,
       "company": "NextFood",
-      "sizes": ["50g", "60g", "80g", "100g", "150g"]
+      "sizes": ["60g", "80g", "100g", "120g"],
+      "additionalInfo": [
+        {
+          "description": "Uninhibited carnally hired played whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart."
+        },
+        {
+          "details": [
+            { "typeOfPacking": "bottle" },
+            { "color": "blue" },
+            { "quantityPerCase": "100ml" }
+          ]
+        },
+        {
+          "PackagingDelivery": "Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly rigid after due oneassenting regarding censorious while occasional or this more crane went more as this less much amid overhung anathematic because muchheld one exuberantly sheep goodness so where rat wry well concomitantly."
+        },
+        { "SuggestedUse": "hjkhjk" },
+        { "Ingredients": "hjkhjk" },
+        { "warnings": "bad" }
+      ]
     },
     {
       "id": 3,
       "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-      "description": "lorem",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
       "discount": 10,
       "price": 99.5,
       "image": "../src/assets/images/products/product-img.png",
-      "catagory": "Lol",
-      "color": "#67BCEE",
-      "more": "Sale",
+      "catagory": "Snack",
+      "color": "#F74B81",
+      "more": "Hot",
       "rating": 5,
       "company": "NextFood",
-      "sizes": ["50g", "60g", "80g", "100g", "150g"]
+      "sizes": ["60g", "80g", "100g", "120g"],
+      "additionalInfo": [
+        {
+          "description": "Uninhibited carnally hired played whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart."
+        },
+        {
+          "details": [
+            { "typeOfPacking": "bottle" },
+            { "color": "blue" },
+            { "quantityPerCase": "100ml" }
+          ]
+        },
+        {
+          "PackagingDelivery": "Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly rigid after due oneassenting regarding censorious while occasional or this more crane went more as this less much amid overhung anathematic because muchheld one exuberantly sheep goodness so where rat wry well concomitantly."
+        },
+        { "SuggestedUse": "hjkhjk" },
+        { "Ingredients": "hjkhjk" },
+        { "warnings": "bad" }
+      ]
     }
   ],
   "comments": [

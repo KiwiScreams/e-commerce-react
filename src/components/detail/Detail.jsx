@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import arrowTop from "../../assets/icons/arrow-top.svg";
 import arrowBottom from "../../assets/icons/arrow-bottom.svg";
+import heartIcon from "../../assets/icons/heart.svg";
+import arrowsIcon from "../../assets/icons/arrows.svg";
+
 const Detail = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -13,6 +16,7 @@ const Detail = () => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const originalPrice = data.price;
   const discountPercentage = data.discount;
@@ -26,6 +30,9 @@ const Detail = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
+  };
+  const handleSizeChange = (size) => {
+    setSelectedSize(size);
   };
   return (
     <>
@@ -85,12 +92,18 @@ const Detail = () => {
                 <span>Size / Weight: </span>
                 {data.sizes &&
                   data.sizes.map((size, index) => (
-                    <span key={index} className="size">
+                    <span
+                      key={index}
+                      className={`size ${
+                        selectedSize === size ? "active-size" : ""
+                      }`}
+                      onClick={() => handleSizeChange(size)}
+                    >
                       {size}
                     </span>
                   ))}
               </div>
-              <div>
+              <div style={{ display: "flex", gap: "10px" }}>
                 <div className="prod-quantity">
                   <span className="quantity">{quantity}</span>
                   <div>
@@ -102,8 +115,45 @@ const Detail = () => {
                     </span>
                   </div>
                 </div>
+                <button className="cart">Add to cart</button>
+                <button className="btn">
+                  <img src={heartIcon} alt="" />
+                </button>
+                <button className="btn">
+                  <img src={arrowsIcon} alt="" />
+                </button>
               </div>
             </div>
+          </div>
+          <div className="detail-bottom-container">
+            <p>{data.additionalInfo?.[0]?.description}</p>
+            <ul>
+              {data.additionalInfo &&
+                data.additionalInfo.map(
+                  (item, index) =>
+                    item.details &&
+                    item.details.map((detail, detailIndex) => (
+                      <li key={detailIndex}>
+                        <span className="green-txt">
+                          {Object.keys(detail).map((key, index) => (
+                            <span key={index}>
+                              {key.charAt(0).toUpperCase() + key.slice(1)}:{" "}
+                              {detail[key]}
+                            </span>
+                          ))}
+                        </span>
+                      </li>
+                    ))
+                )}
+            </ul>
+            <h2>Packaging & Delivery</h2>
+            <p>{data.additionalInfo?.[2]?.PackagingDelivery}</p>
+            <h2>Suggested Use</h2>
+            <p>{data.additionalInfo?.[3]?.SuggestedUse}</p>
+            <h2>Other Ingredients</h2>
+            <p>{data.additionalInfo?.[4]?.Ingredients}</p>
+            <h2>Warnings</h2>
+            <p>{data.additionalInfo?.[5]?.warnings}</p>
           </div>
         </section>
       ) : (
