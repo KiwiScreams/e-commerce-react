@@ -126,6 +126,22 @@
     background-color: var(--green-clr);
     color: var(--white-clr);
 }
+.detail-section button.cart
+{
+    background-color: var(--green-clr);
+    color: var(--white-clr);
+    font-size: var(--font-size-16px);
+    font-weight: bold;
+    border-radius: 5px;
+    width: 160px;
+    height: 50px;
+}
+.detail-section .btn
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
 .detail-section .prod-quantity
 {
     width: 90px;

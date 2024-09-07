@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import arrowTop from "../../assets/icons/arrow-top.svg";
 import arrowBottom from "../../assets/icons/arrow-bottom.svg";
+import heartIcon from "../../assets/icons/heart.svg";
+import arrowsIcon from "../../assets/icons/arrows.svg";
+
 const Detail = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -100,7 +103,7 @@ const Detail = () => {
                     </span>
                   ))}
               </div>
-              <div>
+              <div style={{ display: "flex", gap: "10px" }}>
                 <div className="prod-quantity">
                   <span className="quantity">{quantity}</span>
                   <div>
@@ -112,6 +115,13 @@ const Detail = () => {
                     </span>
                   </div>
                 </div>
+                <button className="cart">Add to cart</button>
+                <button className="btn">
+                  <img src={heartIcon} alt="" />
+                </button>
+                <button className="btn">
+                  <img src={arrowsIcon} alt="" />
+                </button>
               </div>
             </div>
           </div>
