@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "location": "City"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "janedoe@example.com",
+      "location": "City"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Chen Cardigan",
+      "price": "99.50",
+      "image": "thumbnail-3.jpg.png"
+    },
+    {
+      "id": 2,
+      "name": "Chen Sweater",
+      "price": "89.50",
+      "image": "thumbnail-4.jpg.png"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 1,
+      "text": "Love this product!"
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "userId": 2,
+      "text": "Great quality!"
+    }
+  ]
+}
