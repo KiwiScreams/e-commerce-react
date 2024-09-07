@@ -14,13 +14,13 @@ const ProductsList = () => {
     <>
       <section className="product-list-section">
         <h2>Products List</h2>
-        <ul>
+        <div className="product-list">
           {products.map((product) => (
-            <li key={product.id}>
+            <div key={product.id}>
               <Product product={product} />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </>
   );

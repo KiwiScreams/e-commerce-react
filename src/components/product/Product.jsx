@@ -1,10 +1,40 @@
 import "./Product.css";
-const Product = ({product}) => {
+import cartIcon from "../../assets/images/products/cart.svg";
+const Product = ({ product }) => {
+  const originalPrice = product.price;
+  const discountPercentage = product.discount;
+  const currentPrice =
+    originalPrice - originalPrice * (discountPercentage / 100);
   return (
     <>
-      <section className="product-section">
-        <h3>{product.name}</h3>
-        <p>{product.id}</p>
+      <section className="product">
+        <div className="color" style={{ backgroundColor: `${product.color}` }}>
+          {product.more}
+        </div>
+        <div className="image-container">
+          <img src={product.image} alt={product.name} />
+        </div>
+        <span className="category">{product.catagory}</span>
+        <h3 className="name">{product.name}</h3>
+        <div style={{ display: "flex", gap: "30px", marginBottom: "10px" }}>
+          <i className="fa-solid fa-star" style={{ color: "#F59758" }}></i>
+          <span className="rating">({Number(product.rating).toFixed(1)})</span>
+        </div>
+        <p className="company">
+          By <span className="green-txt">{product.company}</span>
+        </p>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h3 className="price-h3">
+            <span className="current-price">${currentPrice.toFixed(2)}</span>
+            <span className="price">
+              <strike>${originalPrice.toFixed(2)}</strike>
+            </span>
+          </h3>
+          <button>
+            <img src={cartIcon} alt="" />
+            Add
+          </button>
+        </div>
       </section>
     </>
   );

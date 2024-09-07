@@ -1,0 +1,10 @@
+.product-list-section
+{
+    width: 78%;
+    margin: auto;
+}
+.product-list-section .product-list
+{
+    display: flex;
+    gap: 25px;
+}
