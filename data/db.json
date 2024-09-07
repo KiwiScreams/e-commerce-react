@@ -16,15 +16,29 @@
   "products": [
     {
       "id": 1,
-      "name": "Chen Cardigan",
-      "price": "99.50",
-      "image": "thumbnail-3.jpg.png"
+      "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+      "description": "lorem",
+      "discount": 10,
+      "price": 99.5,
+      "image": "../src/assets/images/products/product-img.png",
+      "catagory": "Snack",
+      "color": "#F74B81",
+      "more": "Hot",
+      "rating": 5,
+      "company": "NextFood"
     },
     {
       "id": 2,
-      "name": "Chen Sweater",
-      "price": "89.50",
-      "image": "thumbnail-4.jpg.png"
+      "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+      "description": "lorem",
+      "discount": 10,
+      "price": 99.5,
+      "image": "../src/assets/images/products/product-img.png",
+      "catagory": "Snack",
+      "color": "#67BCEE",
+      "more": "Sale",
+      "rating": 5,
+      "company": "NextFood"
     }
   ],
   "comments": [
