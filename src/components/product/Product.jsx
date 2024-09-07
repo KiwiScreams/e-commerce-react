@@ -1,13 +1,18 @@
 import "./Product.css";
+import { useNavigate } from "react-router-dom";
 import cartIcon from "../../assets/images/products/cart.svg";
 const Product = ({ product }) => {
+  const navigate = useNavigate();
   const originalPrice = product.price;
   const discountPercentage = product.discount;
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
+  const handleNavigateToDetailPage = () => {
+    navigate(`/product/${product.id}`);
+  };
   return (
     <>
-      <section className="product">
+      <section className="product" onClick={handleNavigateToDetailPage}>
         <div className="color" style={{ backgroundColor: `${product.color}` }}>
           {product.more}
         </div>
