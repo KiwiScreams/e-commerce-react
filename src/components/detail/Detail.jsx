@@ -13,10 +13,20 @@ const Detail = () => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
+  const [quantity, setQuantity] = useState(1);
   const originalPrice = data.price;
   const discountPercentage = data.discount;
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
   return (
     <>
       {data ? (
@@ -82,12 +92,12 @@ const Detail = () => {
               </div>
               <div>
                 <div className="prod-quantity">
-                  <span className="quantity">1</span>
+                  <span className="quantity">{quantity}</span>
                   <div>
-                    <span className="plus">
+                    <span className="plus" onClick={handleIncrement}>
                       <img src={arrowTop} alt="" />
                     </span>
-                    <span className="minus">
+                    <span className="minus" onClick={handleDecrement}>
                       <img src={arrowBottom} alt="" />
                     </span>
                   </div>
