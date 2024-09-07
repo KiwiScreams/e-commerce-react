@@ -10,7 +10,6 @@ const DetailContainer = () => {
       <section className="detail-container-section">
         <div>
           <Detail />
-          <RelatedProducts />
         </div>
         <SideBar />
       </section>

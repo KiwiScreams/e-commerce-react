@@ -6,6 +6,8 @@ import arrowTop from "../../assets/icons/arrow-top.svg";
 import arrowBottom from "../../assets/icons/arrow-bottom.svg";
 import heartIcon from "../../assets/icons/heart.svg";
 import arrowsIcon from "../../assets/icons/arrows.svg";
+import RelatedProducts from "../related products/RelatedProducts";
+import DetailContainer from "../../pages/detail/DetailContainer";
 
 const Detail = () => {
   const { id } = useParams();
@@ -18,22 +20,18 @@ const Detail = () => {
         const res = await axios.get("http://localhost:8000/products/" + id);
         setData(res.data);
         setLoading(false);
-  
+
         const relatedRes = await axios.get("http://localhost:8000/products");
         const relatedProducts = relatedRes.data.filter((product) => {
           return product.catagory === res.data.catagory && product.id !== id;
         });
-        if (relatedProducts.length === 0) {
-          setRelatedProducts([]);
-        } else {
-          setRelatedProducts(relatedProducts);
-        }
+        setRelatedProducts(relatedProducts);
       } catch (err) {
         console.log(err);
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, [id]);
 
@@ -190,7 +188,7 @@ const Detail = () => {
               <p>{data.additionalInfo?.[5]?.warnings}</p>
             </div>
           </section>
-          <section className="related">
+          {/* <section className="related">
             <h2>Related Products</h2>
             <div className="related-products">
               {relatedProducts && relatedProducts.length > 0 ? (
@@ -206,11 +204,12 @@ const Detail = () => {
                 <p>No similar products found in this category.</p>
               )}
             </div>
-          </section>
+          </section> */}
         </>
       ) : (
         <div>loading</div>
       )}
+      <RelatedProducts relatedProducts={relatedProducts} />
     </>
   );
 };
