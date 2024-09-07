@@ -2,6 +2,24 @@ import "./Filter.css";
 import { useState } from "react";
 
 const Filter = () => {
+  const checkboxData = [
+    {
+      category: "Color",
+      options: [
+        { name: "red", label: "Red", count: 0 },
+        { name: "green", label: "Green", count: 0 },
+        { name: "blue", label: "Blue", count: 0 },
+      ],
+    },
+    {
+      category: "Item Condition",
+      options: [
+        { name: "new", label: "New", count: 0 },
+        { name: "refurbished", label: "Refurbished", count: 0 },
+        { name: "used", label: "Used", count: 0 },
+      ],
+    },
+  ];
   const [minPrice, setMinPrice] = useState(500);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [thumbLeft, setThumbLeft] = useState(0);
@@ -129,36 +147,19 @@ const Filter = () => {
         </div>
       </div>
       <div className="filter-check-container">
-        <div className="check-box">
-          <h6>Color</h6>
-          <div className="checkbox-container">
-            <input type="checkbox" name="red" id="red" />
-            <label htmlFor="red">Red ()</label>
+        {checkboxData.map((category) => (
+          <div key={category.category} className="check-box">
+            <h6>{category.category}</h6>
+            {category.options.map((option) => (
+              <div key={option.name} className="checkbox-container">
+                <input type="checkbox" name={option.name} id={option.name} />
+                <label htmlFor={option.name}>
+                  {option.label} ({option.count})
+                </label>
+              </div>
+            ))}
           </div>
-          <div className="checkbox-container">
-            <input type="checkbox" name="green" id="green" />
-            <label htmlFor="blue">Green ()</label>
-          </div>
-          <div className="checkbox-container">
-            <input type="checkbox" name="blue" id="blue" />
-            <label htmlFor="blue">Blue ()</label>
-          </div>
-        </div>
-      <div className="check-box">
-          <h6>Item Condition</h6>
-          <div className="checkbox-container">
-            <input type="checkbox" name="new" id="new" />
-            <label htmlFor="new">New (1506)</label>
-          </div>
-          <div className="checkbox-container">
-            <input type="checkbox" name="refurbished" id="refurbished" />
-            <label htmlFor="refurbished">Refurbished ()</label>
-          </div>
-          <div className="checkbox-container">
-            <input type="checkbox" name="used" id="used" />
-            <label htmlFor="used">Blue ()</label>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
