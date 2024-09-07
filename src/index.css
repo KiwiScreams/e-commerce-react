@@ -24,6 +24,7 @@
   --pink-clr: #F74B81;
   --light-blue-clr: #67BCEE;
   --orange-clr: #F59758;
+  --yellow-clr: #FDC040;
   /* FONT SIZE */
   --font-size-12px: 12px;
   --font-size-13px: 13px;
@@ -33,11 +34,12 @@
   --font-size-17px: 17px;
   --font-size-18px: 18px;
   --font-size-20px: 20px;
-  --font-size-24px: 24px;
+  --font-size-28px: 28px;
   --font-size-30px: 30px;
   --font-size-32px: 32px;
   --font-size-40px: 40px;
   --font-size-48px: 48px;
+  --font-size-58px: 58px;
   --font-size-26px: 26px;
   --font-size-72px: 72px;
   /* FONT WEIGHT */

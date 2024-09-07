@@ -1,13 +1,19 @@
 import "./Product.css";
+import { useNavigate } from "react-router-dom";
 import cartIcon from "../../assets/images/products/cart.svg";
 const Product = ({ product }) => {
+  const navigate = useNavigate();
   const originalPrice = product.price;
   const discountPercentage = product.discount;
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
+  const handleNavigateToDetailPage = () => {
+    navigate(`/product/${product.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
-      <section className="product">
+      <section className="product" onClick={handleNavigateToDetailPage}>
         <div className="color" style={{ backgroundColor: `${product.color}` }}>
           {product.more}
         </div>
@@ -27,7 +33,7 @@ const Product = ({ product }) => {
           <h3 className="price-h3">
             <span className="current-price">${currentPrice.toFixed(2)}</span>
             <span className="price">
-              <strike>${originalPrice.toFixed(2)}</strike>
+              ${originalPrice.toFixed(2)}
             </span>
           </h3>
           <button>

@@ -7,6 +7,7 @@ footer .logo
 {
     margin-bottom: 22px;
     display: block;
+    cursor: pointer;
 }
 footer p.under-logo
 {

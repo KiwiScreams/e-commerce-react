@@ -64,7 +64,7 @@ const Header = () => {
         </div>
         <div className="header-middle">
           <div className="header-middle-container">
-            <img src={logo} alt="Nest" />
+            <img src={logo} alt="Nest" className="logo"/>
             <Search />
             <ul>
               {headerLinks.map((link, index) => (

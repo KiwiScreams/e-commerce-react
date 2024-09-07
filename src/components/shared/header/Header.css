@@ -2,6 +2,10 @@ header
 {
     width: 100%;
 }
+header .logo
+{
+    cursor: pointer;
+}
 header .header-top
 {
     padding: 12px 0px;

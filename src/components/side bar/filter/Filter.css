@@ -95,3 +95,16 @@
     border-left: none;
     transform: rotate(45deg);
 }
+.filter-section button
+{
+    background-color: var(--green-clr);
+    color: var(--white-clr);
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: fit-content;
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-size: var(--font-size-12px);
+}

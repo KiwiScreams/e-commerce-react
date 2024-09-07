@@ -8,9 +8,11 @@ const Home = () => {
     <>
       <section className="home-section">
         <SideBar />
-        <Slider />
+        <div>
+          <Slider />
+          <ProductsList />
+        </div>
       </section>
-      <ProductsList />
     </>
   );
 };
