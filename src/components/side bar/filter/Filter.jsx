@@ -2,6 +2,24 @@ import "./Filter.css";
 import { useState } from "react";
 
 const Filter = () => {
+  const checkboxData = [
+    {
+      category: "Color",
+      options: [
+        { name: "red", label: "Red", count: 0 },
+        { name: "green", label: "Green", count: 0 },
+        { name: "blue", label: "Blue", count: 0 },
+      ],
+    },
+    {
+      category: "Item Condition",
+      options: [
+        { name: "new", label: "New", count: 0 },
+        { name: "refurbished", label: "Refurbished", count: 0 },
+        { name: "used", label: "Used", count: 0 },
+      ],
+    },
+  ];
   const [minPrice, setMinPrice] = useState(500);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [thumbLeft, setThumbLeft] = useState(0);
@@ -121,12 +139,27 @@ const Filter = () => {
         </div>
         <div className="flex">
           <output style={{ display: "block", fontSize: "16px" }}>
-            From: <span className="green-txt">${minPrice}</span>
+            From: <span className="green-txt"> ${minPrice}</span>
           </output>
           <output style={{ display: "block", fontSize: "16px" }}>
-            To: <span className="green-txt">${maxPrice}</span>
+            To: <span className="green-txt"> ${maxPrice}</span>
           </output>
         </div>
+      </div>
+      <div className="filter-check-container">
+        {checkboxData.map((category) => (
+          <div key={category.category} className="check-box">
+            <h6>{category.category}</h6>
+            {category.options.map((option) => (
+              <div key={option.name} className="checkbox-container">
+                <input type="checkbox" name={option.name} id={option.name} />
+                <label htmlFor={option.name}>
+                  {option.label} ({option.count})
+                </label>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
