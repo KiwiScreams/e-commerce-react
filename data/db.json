@@ -41,6 +41,20 @@
       "rating": 5,
       "company": "NextFood",
       "sizes": ["50g", "60g", "80g", "100g", "150g"]
+    },
+    {
+      "id": 3,
+      "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+      "description": "lorem",
+      "discount": 10,
+      "price": 99.5,
+      "image": "../src/assets/images/products/product-img.png",
+      "catagory": "Lol",
+      "color": "#67BCEE",
+      "more": "Sale",
+      "rating": 5,
+      "company": "NextFood",
+      "sizes": ["50g", "60g", "80g", "100g", "150g"]
     }
   ],
   "comments": [
