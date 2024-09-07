@@ -19,10 +19,38 @@
 .filter-section .price-range #slider
 {
     width: 100%;
+    margin-bottom: 24px;
 }
 .filter-section output
 {
     color: var(--gray-clr);
     font-weight: bold;
     margin-bottom: 14px;
+}
+.filter-section .filter-check-container h6
+{
+    color: var(--gray-clr);
+    font-size: var(--font-size-14px);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.filter-section .filter-check-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.filter-section .filter-check-container .checkbox-container
+{
+    display: flex;
+    gap: 8px;
+    color: #687188;
+    margin-bottom: 14px;
+}
+.filter-section .filter-check-container .checkbox-container input
+{
+    border: 2px solid #CED4DA;
+    border-radius: 2px;
+    width: 17px;
+    height: 17px;
 }

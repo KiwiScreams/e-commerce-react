@@ -128,6 +128,38 @@ const Filter = () => {
           </output>
         </div>
       </div>
+      <div className="filter-check-container">
+        <div className="check-box">
+          <h6>Color</h6>
+          <div className="checkbox-container">
+            <input type="checkbox" name="red" id="red" />
+            <label htmlFor="red">Red ()</label>
+          </div>
+          <div className="checkbox-container">
+            <input type="checkbox" name="green" id="green" />
+            <label htmlFor="blue">Green ()</label>
+          </div>
+          <div className="checkbox-container">
+            <input type="checkbox" name="blue" id="blue" />
+            <label htmlFor="blue">Blue ()</label>
+          </div>
+        </div>
+      <div className="check-box">
+          <h6>Item Condition</h6>
+          <div className="checkbox-container">
+            <input type="checkbox" name="new" id="new" />
+            <label htmlFor="new">New (1506)</label>
+          </div>
+          <div className="checkbox-container">
+            <input type="checkbox" name="refurbished" id="refurbished" />
+            <label htmlFor="refurbished">Refurbished ()</label>
+          </div>
+          <div className="checkbox-container">
+            <input type="checkbox" name="used" id="used" />
+            <label htmlFor="used">Blue ()</label>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
