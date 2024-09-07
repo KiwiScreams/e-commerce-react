@@ -25,6 +25,10 @@
     border-bottom: 1px dotted var(--gray-clr);
     cursor: pointer;
 }
+.new-products-section ul li.product-li:hover
+{
+    opacity: 0.8;
+}
 .new-products-section ul li.product-li .image-container
 {
     width: 80px;
