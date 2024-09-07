@@ -1,3 +1,4 @@
+import ProductsList from "../../components/products list/productsList";
 import NewProducts from "../../components/side bar/new products/NewProducts";
 import SideBar from "../../components/side bar/SideBar";
 import Slider from "../../components/slider/Slider";
@@ -9,6 +10,7 @@ const Home = () => {
         <SideBar />
         <Slider />
       </section>
+      <ProductsList />
     </>
   );
 };
