@@ -1,6 +1,6 @@
 import "./Filter.css";
 import { useState } from "react";
-
+import filterIcon from "../../../assets/icons/filter.svg";
 const Filter = () => {
   const checkboxData = [
     {
@@ -160,6 +160,7 @@ const Filter = () => {
             ))}
           </div>
         ))}
+        <button><img src={filterIcon} alt="" />Filter</button>
       </div>
     </section>
   );

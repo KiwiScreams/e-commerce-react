@@ -9,6 +9,7 @@ const Product = ({ product }) => {
     originalPrice - originalPrice * (discountPercentage / 100);
   const handleNavigateToDetailPage = () => {
     navigate(`/product/${product.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <>
@@ -32,7 +33,7 @@ const Product = ({ product }) => {
           <h3 className="price-h3">
             <span className="current-price">${currentPrice.toFixed(2)}</span>
             <span className="price">
-              <strike>${originalPrice.toFixed(2)}</strike>
+              ${originalPrice.toFixed(2)}
             </span>
           </h3>
           <button>

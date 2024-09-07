@@ -17,7 +17,7 @@
     {
       "id": 1,
       "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-      "description": "lorem",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
       "discount": 10,
       "price": 99.5,
       "image": "../src/assets/images/products/product-img.png",
@@ -25,7 +25,8 @@
       "color": "#F74B81",
       "more": "Hot",
       "rating": 5,
-      "company": "NextFood"
+      "company": "NextFood",
+      "sizes": ["60g", "80g", "100g", "120g"]
     },
     {
       "id": 2,
@@ -38,7 +39,8 @@
       "color": "#67BCEE",
       "more": "Sale",
       "rating": 5,
-      "company": "NextFood"
+      "company": "NextFood",
+      "sizes": ["50g", "60g", "80g", "100g", "150g"]
     }
   ],
   "comments": [
