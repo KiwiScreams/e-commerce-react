@@ -13,9 +13,11 @@ const Detail = () => {
   }, []);
   return (
     <>
-      <h1>detail</h1>
-      <h1>{data.id}</h1>
-      <h1>{data.name}</h1>
+      <section className="detail-section">
+        <h1>detail</h1>
+        <h1>{data.id}</h1>
+        <h1>{data.name}</h1>
+      </section>
     </>
   );
 };
