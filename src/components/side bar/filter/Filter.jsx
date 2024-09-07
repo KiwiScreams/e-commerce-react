@@ -121,10 +121,10 @@ const Filter = () => {
         </div>
         <div className="flex">
           <output style={{ display: "block", fontSize: "16px" }}>
-            From: <span className="green-txt">${minPrice}</span>
+            From: <span className="green-txt"> ${minPrice}</span>
           </output>
           <output style={{ display: "block", fontSize: "16px" }}>
-            To: <span className="green-txt">${maxPrice}</span>
+            To: <span className="green-txt"> ${maxPrice}</span>
           </output>
         </div>
       </div>

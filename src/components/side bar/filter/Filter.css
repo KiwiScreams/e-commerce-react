@@ -18,11 +18,11 @@
 }
 .filter-section .price-range #slider
 {
-    margin-bottom: 24px;
     width: 100%;
 }
 .filter-section output
 {
     color: var(--gray-clr);
     font-weight: bold;
+    margin-bottom: 14px;
 }
