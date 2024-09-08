@@ -501,6 +501,72 @@
           "warnings": ""
         }
       ]
+    },
+    {
+      "id": "88",
+      "name": "jklj",
+      "description": "hjkhkhjkhkj",
+      "discount": 0,
+      "price": 500,
+      "image": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+      "catagory": "",
+      "color": "red",
+      "more": "hjkhjk",
+      "rating": 5,
+      "company": "jlkjkl",
+      "sizes": [
+        "50"
+      ],
+      "additionalInfo": [
+        {
+          "description": "bhjhj",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "electronics"
+    },
+    {
+      "id": "12",
+      "name": "hjkhjk",
+      "description": "",
+      "discount": 50,
+      "price": 500,
+      "image": "hjkhk",
+      "catagory": "",
+      "color": "",
+      "more": "hkhjk",
+      "rating": 5,
+      "company": "hjkhjk",
+      "sizes": [
+        "hjk"
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "clothing"
     }
   ],
   "comments": [

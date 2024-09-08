@@ -2,7 +2,6 @@ import "./AddProduct.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 const AddProduct = () => {
   const [inputData, setInputData] = useState({
     id: "",
@@ -34,7 +33,11 @@ const AddProduct = () => {
       },
     ],
   });
-
+  const categories = [
+    { value: "electronics", label: "Electronics" },
+    { value: "clothing", label: "Clothing" },
+    { value: "home-goods", label: "Home Goods" },
+  ];
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -187,14 +190,19 @@ const AddProduct = () => {
           />
         </div>
         <div className="input-container">
-          <label htmlFor="catagory">Category:</label>
-          <input
-            type="text"
-            name="catagory"
-            placeholder="Enter product category"
-            value={inputData.catagory}
+          <label htmlFor="category">Category:</label>
+          <select
+            name="category"
+            value={inputData.category}
             onChange={handleInputChange}
-          />
+          >
+            <option value="">Select a category</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category.value}>
+                {category.label}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="input-container">
           <label htmlFor="color">Color</label>
