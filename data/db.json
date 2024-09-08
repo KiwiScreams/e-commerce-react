@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "location": "City"
-    },
-    {
-      "id": "2",
-      "name": "Jane Doe",
-      "email": "janedoe@example.com",
-      "location": "City"
-    },
-    {
       "id": "50c1",
       "email": "Axali@gmail.com",
       "phone": "558319738555",
@@ -23,6 +11,18 @@
       "email": "Salome@gmail.com",
       "phone": "123456789101112",
       "password": "123456789101112"
+    },
+    {
+      "id": "9065",
+      "email": "screamskiwi@gmail.com",
+      "phone": "995558319737",
+      "password": "123456789"
+    },
+    {
+      "id": "6096",
+      "email": "screamskiwi@gmail.comm",
+      "phone": "1234567891011122",
+      "password": "1234567899"
     }
   ],
   "products": [

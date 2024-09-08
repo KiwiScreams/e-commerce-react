@@ -26,6 +26,8 @@ const SignIn = () => {
         (user) => user.email === email && user.password === password
       );
       if (user) {
+        localStorage.setItem("isLoggedIn", true);
+        localStorage.setItem("userEmail", email);
         console.log("Sign in successful");
         navigate("/");
       } else {
