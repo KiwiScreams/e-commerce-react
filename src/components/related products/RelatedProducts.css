@@ -19,10 +19,3 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.related-products-section .no-similar
-{
-    text-align: center;
-    margin: auto;
-    border: none;
-    padding: 0;
-}

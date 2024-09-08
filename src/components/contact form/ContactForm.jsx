@@ -44,7 +44,11 @@ const ContactForm = () => {
                 placeholder="Your Subject"
               />
             </div>
-            <textarea name="message" id="message"></textarea>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="..."
+            ></textarea>
             <button>Send message</button>
           </form>
         </div>
