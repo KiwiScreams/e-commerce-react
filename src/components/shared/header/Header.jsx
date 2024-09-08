@@ -86,11 +86,11 @@ const Header = () => {
               {headerLinks.map((link, index) => (
                 <li key={index} className="nav">
                   <Link to={link.path}>
-                    {link.name === "Account" ? null : (
+                    {link.name !== "Logout" && link.name !== "Account" ? (
                       <div className="quantity">
                         <span>0</span>
                       </div>
-                    )}
+                    ) : null}
                     <img src={link.image} alt="" />
                     {link.name}
                   </Link>
