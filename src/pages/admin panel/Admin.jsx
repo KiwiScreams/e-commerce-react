@@ -5,17 +5,16 @@ import NotFound from "../not found/NotFound";
 import "./Admin.css";
 import { Routes, Route, Outlet } from "react-router-dom";
 const Admin = () => {
-  <Routes>
-    <Route path="products" element={<Products />} />
-    <Route path="add" element={<AddProduct />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>;
   return (
     <>
       <section className="admin-panel-section">
         <Navigation />
         <div>
-          <Outlet />
+          <Routes>
+            <Route path="products" element={<Products />} />
+            <Route path="add" element={<AddProduct />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </section>
     </>
