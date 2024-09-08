@@ -6,4 +6,35 @@
     border: 1px solid #ECECEC;
     width: 300px;
     margin-bottom: 30px;
+    height: fit-content;
+}
+.admin-panel-navigation ul 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.admin-panel-navigation ul li a
+{
+    padding: 5px 10px;
+    color: var(--dark-clr);
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #F2F3F4;
+    border-radius: 5px;
+    font-size: var(--font-size-14px);
+    color: var(--dark-clr);
+}
+.admin-panel-navigation li:hover
+{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.admin-panel-navigation ul li a.active
+{
+    background-color: var(--light-green-clr);
 }
