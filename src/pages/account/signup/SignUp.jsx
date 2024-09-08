@@ -17,11 +17,19 @@ const SignUp = () => {
       fetch("http://localhost:8000/users")
         .then((response) => response.json())
         .then((data) => {
-          const existingUser = data.find((user) => user.email === email);
+          const existingUser = data.find(
+            (user) => user.email === email || user.phone === phone
+          );
           if (existingUser) {
-            setEmailError(
-              "Email already exists. Please use a different email address."
-            );
+            if (existingUser.email === email) {
+              setEmailError(
+                "Email already exists. Please use a different email address."
+              );
+            } else if (existingUser.phone === phone) {
+              setPhoneError(
+                "Phone number already exists. Please use a different phone number."
+              );
+            }
           } else {
             console.log("Sign up successful");
             const userData = { email, phone, password };
