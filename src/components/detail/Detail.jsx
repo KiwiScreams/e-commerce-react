@@ -117,22 +117,6 @@ const Detail = () => {
                   </div>
                 </h3>
                 <p className="desc">{data.description}</p>
-                {/* <div className="size">
-                  <span>Size / Weight: </span>
-                  {data.sizes &&
-                    data.sizes.map((size, index) => (
-                      <span
-                        key={index}
-                        className={`size ${
-                          selectedSize === size ? "active-size" : ""
-                        }`}
-                        onClick={() => handleSizeChange(size)}
-                      >
-                        {size}
-                      </span>
-                    ))}
-
-                </div> */}
                 <div className="size">
                   <span>Size / Weight: </span>
                   {data.sizes &&
