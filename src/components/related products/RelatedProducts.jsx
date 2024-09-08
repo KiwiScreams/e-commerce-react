@@ -6,6 +6,7 @@ const RelatedProducts = ({ relatedProducts }) => {
   if (!relatedProducts || relatedProducts.length === 0) {
     return null;
   }
+  
   const navigate = useNavigate();
   const handleNavigateToDetail = (id) => {
     navigate(`/product/${id}`);
@@ -16,8 +17,10 @@ const RelatedProducts = ({ relatedProducts }) => {
       <h2>Related products</h2>
       <div className="related-products-container">
         {relatedProducts.map((product, index) => {
-          const originalPrice = product.price / (1 - product.discount / 100);
-          const currentPrice = product.price;
+          const discountPercentage = product.discount;
+          const originalPrice = product.price;
+          const currentPrice =
+            originalPrice - originalPrice * (discountPercentage / 100);
           return (
             <div
               key={product.id}
