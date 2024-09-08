@@ -5,47 +5,55 @@ const RelatedProducts = ({ relatedProducts }) => {
   if (!relatedProducts || relatedProducts.length === 0) {
     return null;
   }
-
   return (
     <section className="related-products-section">
       <h2>Related products</h2>
       <div className="related-products-container">
-        {relatedProducts.map((product, index) => (
-          <div key={product.id} className="related-product product">
-            <div
-              className="color"
-              style={{ backgroundColor: `${product.color}` }}
-            >
-              {product.more}
-            </div>
-            <div className="image-container">
-              <img src={product.image} alt={product.name} />
-            </div>
-            <span className="category">{product.catagory}</span>
-            <h3 className="name">{product.name}</h3>
-            <div style={{ display: "flex", gap: "30px", marginBottom: "10px" }}>
-              <i className="fa-solid fa-star" style={{ color: "#F59758" }}></i>
-              <span className="rating">
-                ({Number(product.rating).toFixed(1)})
-              </span>
-            </div>
-            <p className="company">
-              By <span className="green-txt">{product.company}</span>
-            </p>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h3 className="price-h3">
-                <span className="current-price">
-                  ${product.price.toFixed(2)}
+        {relatedProducts.map((product, index) => {
+          const originalPrice = product.price / (1 - product.discount / 100);
+          const currentPrice = product.price;
+          return (
+            <div key={product.id} className="related-product product">
+              <div
+                className="color"
+                style={{ backgroundColor: `${product.color}` }}
+              >
+                {product.more}
+              </div>
+              <div className="image-container">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <span className="category">{product.catagory}</span>
+              <h3 className="name">{product.name}</h3>
+              <div
+                style={{ display: "flex", gap: "30px", marginBottom: "10px" }}
+              >
+                <i
+                  className="fa-solid fa-star"
+                  style={{ color: "#F59758" }}
+                ></i>
+                <span className="rating">
+                  ({Number(product.rating).toFixed(1)})
                 </span>
-                <span className="price">${product.price.toFixed(2)}</span>
-              </h3>
-              <button>
-                <img src={cartIcon} alt="" />
-                Add
-              </button>
+              </div>
+              <p className="company">
+                By <span className="green-txt">{product.company}</span>
+              </p>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h3 className="price-h3">
+                  <span className="current-price">
+                    ${currentPrice.toFixed(2)}
+                  </span>
+                  <span className="price">${originalPrice.toFixed(2)}</span>
+                </h3>
+                <button>
+                  <img src={cartIcon} alt="" />
+                  Add
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
