@@ -15,6 +15,15 @@ const SignUp = () => {
     const isValid = validateForm();
     if (isValid) {
       console.log("Sign up successful");
+      const userData = { email, phone, password };
+      fetch("http://localhost:8000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
       navigate("/signin");
     }
   };
@@ -96,7 +105,10 @@ const SignUp = () => {
               Sign Up
             </button>
             <span>
-              Already have an account? <Link to="/signin" className="green-txt">Sign In Now</Link>
+              Already have an account?{" "}
+              <Link to="/signin" className="green-txt">
+                Sign In Now
+              </Link>
             </span>
           </form>
         </div>
