@@ -31,7 +31,7 @@ const SignIn = () => {
             </p>
             <button className="login">Login</button>
             <span>
-              Don't have an account? <Link to="/signup">Sign Up Now</Link>
+              Don't have an account? <Link to="/signup" className="green-txt">Sign Up Now</Link>
             </span>
           </form>
         </div>
