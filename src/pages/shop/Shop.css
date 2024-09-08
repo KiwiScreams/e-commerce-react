@@ -1,0 +1,9 @@
+.shop-section
+{
+    width: 88%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    gap: 54px;
+    justify-content: space-between;
+}

@@ -15,7 +15,6 @@ const ProductsList = () => {
   return (
     <>
       <section className="product-list-section">
-        <h2>Products List</h2>
         <div className="product-list">
           {products.map((product) => (
             <div key={product.id}>
