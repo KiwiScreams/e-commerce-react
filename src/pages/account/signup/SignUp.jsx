@@ -27,7 +27,7 @@ const SignUp = () => {
             console.log("Existing user:", existingUser);
             if (existingUser && existingUser.role === "admin") {
               console.log("Admin user found");
-              navigate("/admin");
+              navigate("/admin/products");
             } else {
               console.log("Admin user not found or not authorized");
             }
