@@ -15,7 +15,8 @@ const AddProduct = () => {
     more: "",
     rating: 0,
     company: "",
-    sizes: [],
+    sizes: [{ value: "", unit: "" }],
+
     additionalInfo: [
       {
         description: "",
@@ -52,7 +53,8 @@ const AddProduct = () => {
     if (name === "price" || name === "discount" || name === "rating") {
       const isValidNumber = /^\d+(\.\d{1,2})?$/.test(value);
       if (isValidNumber) {
-        setInputData({ ...inputData, [name]: parseFloat(value) });
+        const trimmedValue = value.replace(/^0/, "");
+        setInputData({ ...inputData, [name]: parseFloat(trimmedValue) });
       } else {
         console.error("Invalid input value");
       }
@@ -62,9 +64,13 @@ const AddProduct = () => {
   };
 
   const handleSizeChange = (event, index) => {
-    const { value } = event.target;
+    const { name, value } = event.target;
     const sizes = [...inputData.sizes];
-    sizes[index] = value;
+    if (name === "value") {
+      sizes[index].value = parseFloat(value);
+    } else if (name === "unit") {
+      sizes[index].unit = value;
+    }
     setInputData({ ...inputData, sizes });
   };
   let originalPrice;
@@ -98,7 +104,7 @@ const AddProduct = () => {
   const addSize = () => {
     setInputData({
       ...inputData,
-      sizes: [...inputData.sizes, ""],
+      sizes: [...inputData.sizes, { value: "", unit: "" }],
     });
   };
 
@@ -247,12 +253,29 @@ const AddProduct = () => {
         <div className="input-container">
           <label>Sizes:</label>
           {inputData.sizes.map((size, index) => (
-            <input
-              key={index}
-              type="text"
-              value={size}
-              onChange={(event) => handleSizeChange(event, index)}
-            />
+            <div key={index}>
+              <input
+                type="number"
+                value={size.value}
+                onChange={(event) => handleSizeChange(event, index)}
+                name="value"
+              />
+              <select
+                name="unit"
+                value={size.unit}
+                onChange={(event) => handleSizeChange(event, index)}
+              >
+                <option value="">Select unit</option>
+                <option value="ml">ml</option>
+                <option value="g">g</option>
+                <option value="kg">kg</option>
+                <option value="oz">oz</option>
+                <option value="lb">lb</option>
+              </select>
+              <span>
+                {size.value} {size.unit}
+              </span>
+            </div>
           ))}
           <button type="button" onClick={addSize}>
             Add Size
