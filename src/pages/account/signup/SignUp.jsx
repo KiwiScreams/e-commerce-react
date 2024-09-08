@@ -14,17 +14,29 @@ const SignUp = () => {
     e.preventDefault();
     const isValid = validateForm();
     if (isValid) {
-      console.log("Sign up successful");
-      const userData = { email, phone, password };
-      fetch("http://localhost:8000/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      })
+      fetch("http://localhost:8000/users")
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          const existingUser = data.find((user) => user.email === email);
+          if (existingUser) {
+            setEmailError(
+              "Email already exists. Please use a different email address."
+            );
+          } else {
+            console.log("Sign up successful");
+            const userData = { email, phone, password };
+            fetch("http://localhost:8000/users", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(userData),
+            })
+              .then((response) => response.json())
+              .then((data) => console.log(data))
+              .catch((error) => console.error(error));
+            navigate("/signin");
+          }
+        })
         .catch((error) => console.error(error));
-      navigate("/signin");
     }
   };
 
