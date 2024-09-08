@@ -11,6 +11,18 @@
       "name": "Jane Doe",
       "email": "janedoe@example.com",
       "location": "City"
+    },
+    {
+      "id": "50c1",
+      "email": "Axali@gmail.com",
+      "phone": "558319738555",
+      "password": "55555555555555"
+    },
+    {
+      "id": "0657",
+      "email": "Salome@gmail.com",
+      "phone": "123456789101112",
+      "password": "123456789101112"
     }
   ],
   "products": [
@@ -367,7 +379,7 @@
       "catagory": "Snack",
       "color": "blue",
       "more": "Sale",
-      "rating": 2.2,
+      "rating": "",
       "company": "NextFood",
       "sizes": [
         "60g",
