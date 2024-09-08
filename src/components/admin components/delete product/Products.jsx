@@ -17,6 +17,17 @@ const Products = () => {
     fetchProducts();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:8000/products/${id}`, {
+        method: "DELETE",
+      });
+      setProducts(products.filter((product) => product.id !== id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="products-container">
       {products.map((product) => (
@@ -25,7 +36,7 @@ const Products = () => {
           <p>Rating: {product.rating}/5</p>
           <p>Price: ${product.price}</p>
           <p>Discount: {product.discount}%</p>
-          <button>delete</button>
+          <button onClick={() => handleDelete(product.id)}>Delete</button>
         </div>
       ))}
     </div>
