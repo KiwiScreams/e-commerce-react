@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import logo from "../../../../public/logo.svg.svg";
 import Search from "./search/Search";
@@ -26,7 +26,6 @@ const Header = () => {
     setIsLoggedIn(false);
     navigate("/signup");
   };
-
   const getHeaderLinks = () => {
     return [
       {
@@ -58,6 +57,10 @@ const Header = () => {
   const handleNavigateToAdminPage_Testing = () => {
     navigate("/admin");
   };
+  const location = useLocation();
+  const isAdminPage = location.pathname === "/admin";
+  if (isAdminPage) return null;
+
   return (
     <>
       <header>
@@ -87,7 +90,12 @@ const Header = () => {
                 Need help? Call Us:<span className="green-txt">+ 1800 900</span>
               </li>
               <li>English</li>
-              <li onClick={handleNavigateToAdminPage_Testing} style={{cursor: "pointer"}}>USD</li>
+              <li
+                onClick={handleNavigateToAdminPage_Testing}
+                style={{ cursor: "pointer" }}
+              >
+                USD
+              </li>
             </ul>
           </div>
         </div>
