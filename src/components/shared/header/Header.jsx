@@ -55,7 +55,9 @@ const Header = () => {
       },
     ];
   };
-
+  const handleNavigateToAdminPage_Testing = () => {
+    navigate("/admin");
+  };
   return (
     <>
       <header>
@@ -85,7 +87,7 @@ const Header = () => {
                 Need help? Call Us:<span className="green-txt">+ 1800 900</span>
               </li>
               <li>English</li>
-              <li>USD</li>
+              <li onClick={handleNavigateToAdminPage_Testing} style={{cursor: "pointer"}}>USD</li>
             </ul>
           </div>
         </div>

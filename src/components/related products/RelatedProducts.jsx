@@ -6,7 +6,6 @@ const RelatedProducts = ({ relatedProducts }) => {
   if (!relatedProducts || relatedProducts.length === 0) {
     return null;
   }
-  
   const navigate = useNavigate();
   const handleNavigateToDetail = (id) => {
     navigate(`/product/${id}`);
