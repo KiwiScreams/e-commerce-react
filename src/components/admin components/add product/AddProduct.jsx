@@ -55,6 +55,13 @@ const AddProduct = () => {
       const isValidNumber = /^\d+(\.\d{1,2})?$/.test(value);
       if (isValidNumber) {
         const trimmedValue = value.replace(/^0/, "");
+        if (name === "rating") {
+          const ratingValue = parseFloat(trimmedValue);
+          if (ratingValue < 0 || ratingValue > 5) {
+            console.error("Rating must be between 0 and 5");
+            return;
+          }
+        }
         setInputData({ ...inputData, [name]: parseFloat(trimmedValue) });
       } else {
         console.error("Invalid input value");
@@ -226,6 +233,8 @@ const AddProduct = () => {
           <input
             type="number"
             name="rating"
+            min="0"
+            max="5"
             placeholder="Enter product rating"
             value={inputData.rating}
             onChange={handleInputChange}

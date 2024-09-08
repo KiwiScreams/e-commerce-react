@@ -687,6 +687,41 @@
         }
       ],
       "category": "clothing"
+    },
+    {
+      "id": "3687edb0-4ae0-4abc-8f61-6d2b61830419",
+      "name": "jklj",
+      "description": "",
+      "discount": 0,
+      "price": 0,
+      "image": "",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 5,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
     }
   ],
   "comments": [
