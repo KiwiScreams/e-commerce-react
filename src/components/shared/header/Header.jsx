@@ -11,39 +11,50 @@ import Nav from "./nav/Nav";
 
 const Header = () => {
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(isLoggedIn);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userEmail");
-    navigate("/signin");
+    setIsLoggedIn(false);
+    navigate("/signup");
   };
 
-  const headerLinks = [
-    {
-      path: "/compare",
-      name: "Compare",
-      image: iconRe,
-      quantity: 0,
-    },
-    {
-      path: "/wishlist",
-      name: "Wishlist",
-      image: iconWishlist,
-      quantity: 0,
-    },
-    {
-      path: "/cart",
-      name: "Cart",
-      image: iconCart,
-      quantity: 0,
-    },
-    {
-      path: isLoggedIn ? "/" : "/signup",
-      name: isLoggedIn ? "Logout" : "Account",
-      image: iconAccount,
-    },
-  ];
+  const getHeaderLinks = () => {
+    return [
+      {
+        path: "/compare",
+        name: "Compare",
+        image: iconRe,
+        quantity: 0,
+      },
+      {
+        path: "/wishlist",
+        name: "Wishlist",
+        image: iconWishlist,
+        quantity: 0,
+      },
+      {
+        path: "/cart",
+        name: "Cart",
+        image: iconCart,
+        quantity: 0,
+      },
+      {
+        path: isLoggedIn ? "/" : "/signup",
+        name: isLoggedIn ? "Logout" : "Account",
+        image: iconAccount,
+        onClick: isLoggedIn ? handleLogout : null,
+      },
+    ];
+  };
 
   return (
     <>
@@ -83,17 +94,29 @@ const Header = () => {
             <img src={logo} alt="Nest" className="logo" />
             <Search />
             <ul>
-              {headerLinks.map((link, index) => (
+              {getHeaderLinks().map((link, index) => (
                 <li key={index} className="nav">
-                  <Link to={link.path}>
-                    {link.name !== "Logout" && link.name !== "Account" ? (
-                      <div className="quantity">
-                        <span>0</span>
-                      </div>
-                    ) : null}
-                    <img src={link.image} alt="" />
-                    {link.name}
-                  </Link>
+                  {link.onClick ? (
+                    <a onClick={link.onClick}>
+                      {link.name !== "Logout" && link.name !== "Account" ? (
+                        <div className="quantity">
+                          <span>0</span>
+                        </div>
+                      ) : null}
+                      <img src={link.image} alt="" />
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.path}>
+                      {link.name !== "Logout" && link.name !== "Account" ? (
+                        <div className="quantity">
+                          <span>0</span>
+                        </div>
+                      ) : null}
+                      <img src={link.image} alt="" />
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
