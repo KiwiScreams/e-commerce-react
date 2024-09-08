@@ -10,6 +10,8 @@ import Footer from "./components/shared/footer/Footer";
 import DetailContainer from "./pages/detail/DetailContainer";
 import Shop from "./pages/shop/Shop";
 import Admin from "./pages/admin panel/Admin";
+import SignUp from "./pages/account/signup/SignUp";
+import SignIn from "./pages/account/signin/SignIn";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/shop" element={<Shop />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
