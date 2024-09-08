@@ -6,7 +6,7 @@ import iconLocation from "../../../assets/icons/footer icons/icon-location.svg.s
 import iconHeadphone from "../../../assets/icons/footer icons/icon-contact.svg.svg";
 import iconEmail from "../../../assets/icons/footer icons/icon-email.svg.svg";
 import iconClock from "../../../assets/icons/footer icons/icon-clock.svg.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import FooterBottom from "./footer bottom/FooterBottom";
 const footerContacts = [
   {
@@ -76,7 +76,11 @@ const ulColumn = [
     { text: "Cheese", href: "/notfound" },
   ],
 ];
+
 const Footer = () => {
+  const location = useLocation();
+  const isAdminPage = location.pathname === "/admin";
+  if (isAdminPage) return null;
   return (
     <>
       <footer>
