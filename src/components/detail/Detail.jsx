@@ -128,7 +128,7 @@ const Detail = () => {
                         }`}
                         onClick={() => handleSizeChange(size)}
                       >
-                        {size}
+                        {size.value} {size.unit}
                       </span>
                     ))}
                 </div>

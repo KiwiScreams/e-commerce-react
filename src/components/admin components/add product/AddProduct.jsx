@@ -2,10 +2,10 @@ import "./AddProduct.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { v4 as uuidv4 } from "uuid";
 const AddProduct = () => {
   const [inputData, setInputData] = useState({
-    id: "",
+    id: uuidv4(),
     name: "",
     description: "",
     discount: 0,
@@ -16,7 +16,8 @@ const AddProduct = () => {
     more: "",
     rating: 0,
     company: "",
-    sizes: [],
+    sizes: [{ value: "", unit: "" }],
+
     additionalInfo: [
       {
         description: "",
@@ -34,7 +35,11 @@ const AddProduct = () => {
       },
     ],
   });
-
+  const categories = [
+    { value: "electronics", label: "Electronics" },
+    { value: "clothing", label: "Clothing" },
+    { value: "home-goods", label: "Home Goods" },
+  ];
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -49,7 +54,15 @@ const AddProduct = () => {
     if (name === "price" || name === "discount" || name === "rating") {
       const isValidNumber = /^\d+(\.\d{1,2})?$/.test(value);
       if (isValidNumber) {
-        setInputData({ ...inputData, [name]: parseFloat(value) });
+        const trimmedValue = value.replace(/^0/, "");
+        if (name === "rating") {
+          const ratingValue = parseFloat(trimmedValue);
+          if (ratingValue < 0 || ratingValue > 5) {
+            console.error("Rating must be between 0 and 5");
+            return;
+          }
+        }
+        setInputData({ ...inputData, [name]: parseFloat(trimmedValue) });
       } else {
         console.error("Invalid input value");
       }
@@ -59,9 +72,13 @@ const AddProduct = () => {
   };
 
   const handleSizeChange = (event, index) => {
-    const { value } = event.target;
+    const { name, value } = event.target;
     const sizes = [...inputData.sizes];
-    sizes[index] = value;
+    if (name === "value") {
+      sizes[index].value = parseFloat(value);
+    } else if (name === "unit") {
+      sizes[index].unit = value;
+    }
     setInputData({ ...inputData, sizes });
   };
   let originalPrice;
@@ -95,7 +112,7 @@ const AddProduct = () => {
   const addSize = () => {
     setInputData({
       ...inputData,
-      sizes: [...inputData.sizes, ""],
+      sizes: [...inputData.sizes, { value: "", unit: "" }],
     });
   };
 
@@ -125,16 +142,6 @@ const AddProduct = () => {
   return (
     <section className="add-product-section">
       <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="id">ID:</label>
-          <input
-            type="text"
-            name="id"
-            placeholder="Enter product ID"
-            value={inputData.id}
-            onChange={handleInputChange}
-          />
-        </div>
         <div className="input-container">
           <label htmlFor="name">Name:</label>
           <input
@@ -187,14 +194,19 @@ const AddProduct = () => {
           />
         </div>
         <div className="input-container">
-          <label htmlFor="catagory">Category:</label>
-          <input
-            type="text"
-            name="catagory"
-            placeholder="Enter product category"
-            value={inputData.catagory}
+          <label htmlFor="category">Category:</label>
+          <select
+            name="category"
+            value={inputData.category}
             onChange={handleInputChange}
-          />
+          >
+            <option value="">Select a category</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category.value}>
+                {category.label}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="input-container">
           <label htmlFor="color">Color</label>
@@ -221,6 +233,8 @@ const AddProduct = () => {
           <input
             type="number"
             name="rating"
+            min="0"
+            max="5"
             placeholder="Enter product rating"
             value={inputData.rating}
             onChange={handleInputChange}
@@ -239,12 +253,29 @@ const AddProduct = () => {
         <div className="input-container">
           <label>Sizes:</label>
           {inputData.sizes.map((size, index) => (
-            <input
-              key={index}
-              type="text"
-              value={size}
-              onChange={(event) => handleSizeChange(event, index)}
-            />
+            <div key={index}>
+              <input
+                type="number"
+                value={size.value}
+                onChange={(event) => handleSizeChange(event, index)}
+                name="value"
+              />
+              <select
+                name="unit"
+                value={size.unit}
+                onChange={(event) => handleSizeChange(event, index)}
+              >
+                <option value="">Select unit</option>
+                <option value="ml">ml</option>
+                <option value="g">g</option>
+                <option value="kg">kg</option>
+                <option value="oz">oz</option>
+                <option value="lb">lb</option>
+              </select>
+              <span>
+                {size.value} {size.unit}
+              </span>
+            </div>
           ))}
           <button type="button" onClick={addSize}>
             Add Size

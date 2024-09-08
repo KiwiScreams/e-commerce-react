@@ -15,55 +15,6 @@
   ],
   "products": [
     {
-      "id": "1",
-      "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
-      "discount": 10,
-      "price": 99.5,
-      "image": "../src/assets/images/products/product-img.png",
-      "catagory": "Snack",
-      "color": "#F74B81",
-      "more": "Hot",
-      "rating": 5,
-      "company": "NextFood",
-      "sizes": [
-        "60g",
-        "80g",
-        "100g",
-        "120g"
-      ],
-      "additionalInfo": [
-        {
-          "description": "Uninhibited carnally hired played whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart."
-        },
-        {
-          "details": [
-            {
-              "typeOfPacking": "bottle"
-            },
-            {
-              "color": "blue"
-            },
-            {
-              "quantityPerCase": "100ml"
-            }
-          ]
-        },
-        {
-          "PackagingDelivery": "Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly rigid after due oneassenting regarding censorious while occasional or this more crane went more as this less much amid overhung anathematic because muchheld one exuberantly sheep goodness so where rat wry well concomitantly."
-        },
-        {
-          "SuggestedUse": "hjkhjk"
-        },
-        {
-          "Ingredients": "hjkhjk"
-        },
-        {
-          "warnings": "bad"
-        }
-      ]
-    },
-    {
       "id": "2",
       "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi.",
@@ -451,54 +402,6 @@
         },
         {
           "warnings": "bad"
-        }
-      ]
-    },
-    {
-      "id": "54",
-      "name": "salome",
-      "description": "cooldjkjlk",
-      "discount": "50",
-      "price": 500,
-      "image": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
-      "catagory": "Snack",
-      "color": "red",
-      "more": "hjkhjk",
-      "rating": "3.2",
-      "company": "rame",
-      "sizes": [
-        "10",
-        "20",
-        "30"
-      ],
-      "additionalInfo": [
-        {
-          "description": "gjghjghjghjgh",
-          "details": [
-            {
-              "typeOfPacking": "ghjghj",
-              "color": "ghjghj",
-              "quantityPerCase": "ghjghj"
-            }
-          ],
-          "PackagingDelivery": "ghjghjgh",
-          "SuggestedUse": "ghjghj",
-          "Ingredients": "ghgj",
-          "warnings": "ghjghj"
-        },
-        {
-          "description": "",
-          "details": [
-            {
-              "typeOfPacking": "",
-              "color": "",
-              "quantityPerCase": ""
-            }
-          ],
-          "PackagingDelivery": "",
-          "SuggestedUse": "",
-          "Ingredients": "",
-          "warnings": ""
         }
       ]
     }
