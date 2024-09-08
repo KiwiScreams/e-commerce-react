@@ -248,7 +248,7 @@
       "catagory": "Snack",
       "color": "#F74B81",
       "more": "Hot",
-      "rating": 5,
+      "rating": 2.8,
       "company": "NextFood",
       "sizes": ["60g", "80g", "100g", "120g"],
       "additionalInfo": [
@@ -280,7 +280,7 @@
       "catagory": "Snack",
       "color": "blue",
       "more": "Sale",
-      "rating": 5,
+      "rating": 2.2,
       "company": "NextFood",
       "sizes": ["60g", "100g", "120g"],
       "additionalInfo": [

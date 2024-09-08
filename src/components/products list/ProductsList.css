@@ -1,10 +1,19 @@
 .product-list-section
 {
-    width: 78%;
+    width: 100%;
     margin: auto;
+}
+.product-list-section h2
+{
+    color: var(--dark-clr);
+    font-size: var(--font-size-24px);
+    margin-bottom: 20px;
 }
 .product-list-section .product-list
 {
     display: flex;
     gap: 25px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

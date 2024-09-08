@@ -1,10 +1,11 @@
 .carousel-container
 {
   position: relative;
-  width: 1264px;
+  width: 100%;
   height: 538px;
   overflow: hidden;
   border-radius: 30px;
+  margin-bottom: 130px;
 }
 .carousel-container h2
 {
