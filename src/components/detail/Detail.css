@@ -6,7 +6,6 @@
 {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     gap: 54px;
 }
 .detail-section .detail-top-container
