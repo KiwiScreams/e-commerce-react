@@ -55,10 +55,11 @@ const Header = () => {
     ];
   };
   const handleNavigateToAdminPage_Testing = () => {
-    navigate("/admin");
+    navigate("/admin/products");
   };
   const location = useLocation();
-  const isAdminPage = location.pathname === "/admin";
+  const isAdminPage = /^\/admin\//.test(location.pathname);
+
   if (isAdminPage) return null;
 
   return (

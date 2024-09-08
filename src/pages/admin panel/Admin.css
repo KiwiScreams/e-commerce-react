@@ -1,0 +1,6 @@
+.admin-panel-section
+{
+    display: flex;
+    gap: 54px;
+    padding: 30px;
+}
