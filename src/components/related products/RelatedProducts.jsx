@@ -1,10 +1,16 @@
 import "./RelatedProducts.css";
 import cartIcon from "../../assets/images/products/cart.svg";
+import { useNavigate } from "react-router-dom";
 
 const RelatedProducts = ({ relatedProducts }) => {
   if (!relatedProducts || relatedProducts.length === 0) {
     return null;
   }
+  const navigate = useNavigate();
+  const handleNavigateToDetail = (id) => {
+    navigate(`/product/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <section className="related-products-section">
       <h2>Related products</h2>
@@ -13,7 +19,11 @@ const RelatedProducts = ({ relatedProducts }) => {
           const originalPrice = product.price / (1 - product.discount / 100);
           const currentPrice = product.price;
           return (
-            <div key={product.id} className="related-product product">
+            <div
+              key={product.id}
+              className="related-product product"
+              onClick={() => handleNavigateToDetail(product.id)}
+            >
               <div
                 className="color"
                 style={{ backgroundColor: `${product.color}` }}
