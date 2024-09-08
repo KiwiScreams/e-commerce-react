@@ -10,41 +10,32 @@ const SignUp = () => {
   const [phoneError, setPhoneError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
+  const adminEmail = "admin@gmail.com";
+  const adminPassword = "1111-2222";
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("handleSubmit called");
     const isValid = validateForm();
     if (isValid) {
-      fetch("http://localhost:8000/users")
-        .then((response) => response.json())
-        .then((data) => {
-          const existingUser = data.find(
-            (user) => user.email === email || user.phone === phone
-          );
-          if (existingUser) {
-            if (existingUser.email === email) {
-              setEmailError(
-                "Email already exists. Please use a different email address."
-              );
-            } else if (existingUser.phone === phone) {
-              setPhoneError(
-                "Phone number already exists. Please use a different phone number."
-              );
+      if (email === adminEmail && password === adminPassword) {
+        console.log("Admin credentials entered");
+        fetch("http://localhost:8000/users")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Users data:", data);
+            const existingUser = data.find((user) => user.email === email);
+            console.log("Existing user:", existingUser);
+            if (existingUser && existingUser.role === "admin") {
+              console.log("Admin user found");
+              navigate("/admin");
+            } else {
+              console.log("Admin user not found or not authorized");
             }
-          } else {
-            console.log("Sign up successful");
-            const userData = { email, phone, password };
-            fetch("http://localhost:8000/users", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(userData),
-            })
-              .then((response) => response.json())
-              .then((data) => console.log(data))
-              .catch((error) => console.error(error));
-            navigate("/signin");
-          }
-        })
-        .catch((error) => console.error(error));
+          })
+          .catch((error) => console.error(error));
+      } else {
+        console.log("Sign in successful");
+      }
     }
   };
 
@@ -125,7 +116,7 @@ const SignUp = () => {
               Sign Up
             </button>
             <span>
-              Already have an account?{" "}
+              Already have an account?
               <Link to="/signin" className="green-txt">
                 Sign In Now
               </Link>
