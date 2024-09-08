@@ -27,7 +27,7 @@ const headerLinks = [
     quantity: 0,
   },
   {
-    path: "/account",
+    path: "/signup",
     name: "Account",
     image: iconAccount,
   },
@@ -43,7 +43,7 @@ const Header = () => {
                 <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link to="/">My Account</Link>
+                <Link to="/signup">My Account</Link>
               </li>
               <li>
                 <Link to="/wishlist">Wishlist</Link>
