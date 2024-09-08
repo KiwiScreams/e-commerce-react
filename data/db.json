@@ -651,6 +651,42 @@
         }
       ],
       "category": "electronics"
+    },
+    {
+      "id": "9c9ab5be-2b05-485a-8c3d-f6ef9f0edee2",
+      "name": "very very new",
+      "description": "hjkhjkhjkhk",
+      "discount": 50,
+      "price": 8000,
+      "image": "https://img.freepik.com/free-photo/magenta-mystical-landscape-with-nature_23-2150693911.jpg",
+      "catagory": "",
+      "color": "red",
+      "more": "hjkhjk",
+      "rating": 52,
+      "company": "jlkjkl",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "clothing"
     }
   ],
   "comments": [

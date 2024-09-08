@@ -2,9 +2,10 @@ import "./AddProduct.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 const AddProduct = () => {
   const [inputData, setInputData] = useState({
-    id: "",
+    id: uuidv4(),
     name: "",
     description: "",
     discount: 0,
@@ -134,16 +135,6 @@ const AddProduct = () => {
   return (
     <section className="add-product-section">
       <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="id">ID:</label>
-          <input
-            type="text"
-            name="id"
-            placeholder="Enter product ID"
-            value={inputData.id}
-            onChange={handleInputChange}
-          />
-        </div>
         <div className="input-container">
           <label htmlFor="name">Name:</label>
           <input
