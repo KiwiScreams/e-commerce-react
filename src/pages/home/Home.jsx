@@ -10,7 +10,7 @@ const Home = () => {
         <SideBar />
         <div>
           <Slider />
-          <ProductsList />
+          <ProductsList popular={true}/>
         </div>
       </section>
     </>
