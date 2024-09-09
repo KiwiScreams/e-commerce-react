@@ -21,6 +21,14 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [touched, setTouched] = useState({
+    firstname: false,
+    email: false,
+    phone: false,
+    subject: false,
+    message: false,
+  });
+
   const validateForm = () => {
     const newErrors = { ...errors };
     let isValid = true;
@@ -51,15 +59,12 @@ const ContactForm = () => {
     }
 
     if (isValid) {
-      const newErrors = {};
-      Object.keys(errors).forEach((key) => {
+      Object.keys(newErrors).forEach((key) => {
         newErrors[key] = "";
       });
-      setErrors(newErrors);
-    } else {
-      setErrors(newErrors);
     }
 
+    setErrors(newErrors);
     setIsValid(isValid);
     return isValid;
   };
@@ -74,8 +79,13 @@ const ContactForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
+    setTouched({ ...touched, [name]: true });
     validateForm();
+  };
+
+  const handleBlur = (event) => {
+    const { name } = event.target;
+    setTouched({ ...touched, [name]: true });
   };
 
   return (
@@ -97,8 +107,9 @@ const ContactForm = () => {
                 placeholder="First Name"
                 value={formData.firstname}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
-              {errors.firstname && (
+              {errors.firstname && touched.firstname && (
                 <div className="error">{errors.firstname}</div>
               )}
             </div>
@@ -110,8 +121,11 @@ const ContactForm = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
-              {errors.email && <div className="error">{errors.email}</div>}
+              {errors.email && touched.email && (
+                <div className="error">{errors.email}</div>
+              )}
             </div>
             <div className="input-container">
               <input
@@ -121,8 +135,11 @@ const ContactForm = () => {
                 placeholder="Your Phone"
                 value={formData.phone}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
-              {errors.phone && <div className="error">{errors.phone}</div>}
+              {errors.phone && touched.phone && (
+                <div className="error">{errors.phone}</div>
+              )}
             </div>
             <div className="input-container">
               <input
@@ -132,8 +149,11 @@ const ContactForm = () => {
                 placeholder="Your Subject"
                 value={formData.subject}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
-              {errors.subject && <div className="error">{errors.subject}</div>}
+              {errors.subject && touched.subject && (
+                <div className="error">{errors.subject}</div>
+              )}
             </div>
             <textarea
               name="message"
@@ -141,8 +161,11 @@ const ContactForm = () => {
               placeholder="..."
               value={formData.message}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
-            {errors.message && <div className="error">{errors.message}</div>}
+            {errors.message && touched.message && (
+              <div className="error">{errors.message}</div>
+            )}
             <button type="submit">Send message</button>
           </form>
         </div>
