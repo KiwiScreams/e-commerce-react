@@ -3,6 +3,8 @@ import formImage from "../../assets/images/contact images/contact.png";
 import { useState } from "react";
 
 const ContactForm = () => {
+  const [isValid, setIsValid] = useState(false);
+
   const [formData, setFormData] = useState({
     firstname: "",
     email: "",
@@ -23,7 +25,7 @@ const ContactForm = () => {
     const newErrors = { ...errors };
     let isValid = true;
 
-    if (formData.firstname.trim() === "") {
+    if (!formData.firstname.trim()) {
       newErrors.firstname = "First name is required";
       isValid = false;
     }
@@ -48,6 +50,7 @@ const ContactForm = () => {
       isValid = false;
     }
 
+    setIsValid(isValid);
     setErrors(newErrors);
     return isValid;
   };
@@ -55,7 +58,6 @@ const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
-      // Form is valid, submit the data
       console.log(formData);
     }
   };
@@ -131,7 +133,9 @@ const ContactForm = () => {
               onChange={handleChange}
             />
             {errors.message && <div className="error">{errors.message}</div>}
-            <button>Send message</button>
+            <button type="submit" disabled={!isValid}>
+              Send message
+            </button>
           </form>
         </div>
         <div className="image-container">
