@@ -1,5 +1,7 @@
 import "./ContactForm.css";
 import formImage from "../../assets/images/contact images/contact.png";
+import { useState } from "react";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstname: "",
@@ -16,6 +18,7 @@ const ContactForm = () => {
     subject: "",
     message: "",
   });
+
   const validateForm = () => {
     const newErrors = { ...errors };
     let isValid = true;
@@ -48,9 +51,11 @@ const ContactForm = () => {
     setErrors(newErrors);
     return isValid;
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
+      // Form is valid, submit the data
       console.log(formData);
     }
   };
@@ -60,6 +65,7 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: "" });
   };
+
   return (
     <>
       <section className="contact-form-section">
@@ -70,14 +76,19 @@ const ContactForm = () => {
             Your email address will not be published. Required fields are marked
             *
           </p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="input-container">
               <input
                 type="text"
                 name="firstname"
                 id="firstname"
                 placeholder="First Name"
+                value={formData.firstname}
+                onChange={handleChange}
               />
+              {errors.firstname && (
+                <div className="error">{errors.firstname}</div>
+              )}
             </div>
             <div className="input-container">
               <input
@@ -85,7 +96,10 @@ const ContactForm = () => {
                 name="email"
                 id="email"
                 placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
               />
+              {errors.email && <div className="error">{errors.email}</div>}
             </div>
             <div className="input-container">
               <input
@@ -93,7 +107,10 @@ const ContactForm = () => {
                 name="phone"
                 id="phone"
                 placeholder="Your Phone"
+                value={formData.phone}
+                onChange={handleChange}
               />
+              {errors.phone && <div className="error">{errors.phone}</div>}
             </div>
             <div className="input-container">
               <input
@@ -101,9 +118,19 @@ const ContactForm = () => {
                 name="subject"
                 id="subject"
                 placeholder="Your Subject"
+                value={formData.subject}
+                onChange={handleChange}
               />
+              {errors.subject && <div className="error">{errors.subject}</div>}
             </div>
-            <textarea name="message" id="message" placeholder="..."></textarea>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="..."
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {errors.message && <div className="error">{errors.message}</div>}
             <button>Send message</button>
           </form>
         </div>
