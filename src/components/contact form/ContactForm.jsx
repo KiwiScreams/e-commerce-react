@@ -16,6 +16,38 @@ const ContactForm = () => {
     subject: "",
     message: "",
   });
+  const validateForm = () => {
+    const newErrors = { ...errors };
+    let isValid = true;
+
+    if (formData.firstname.trim() === "") {
+      newErrors.firstname = "First name is required";
+      isValid = false;
+    }
+
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+      isValid = false;
+    }
+
+    if (formData.phone.trim() === "") {
+      newErrors.phone = "Phone number is required";
+      isValid = false;
+    }
+
+    if (formData.subject.trim() === "") {
+      newErrors.subject = "Subject is required";
+      isValid = false;
+    }
+
+    if (formData.message.trim() === "") {
+      newErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
   return (
     <>
       <section className="contact-form-section">
