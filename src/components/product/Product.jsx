@@ -3,14 +3,15 @@ import { useNavigate } from "react-router-dom";
 import cartIcon from "../../assets/images/products/cart.svg";
 import RelatedProducts from "../related products/RelatedProducts";
 const Product = ({ product }) => {
+
   const navigate = useNavigate();
   const originalPrice = product.price;
   const discountPercentage = product.discount;
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
   const handleNavigateToDetailPage = () => {
-    navigate(`/product/${product.id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // navigate(`/product/${product.id}`);
+    // window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <>
