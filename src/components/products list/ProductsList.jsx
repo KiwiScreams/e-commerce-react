@@ -18,25 +18,16 @@ const ProductsList = ({ popular }) => {
   const popularProducts = popular
     ? products.filter((product) => product.rating > 4)
     : products;
-  const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
   return (
     <>
       <section className="product-list-section">
         <div className="product-list">
           {products.length > 0 &&
             popularProducts.map((product) => (
-              <Product
-                key={product.id}
-                product={product}
-                cart={cart}
-                setCart={setCart}
+              <Product key={product.id}
               />
             ))}
-          <Cart cart={cart} />
         </div>
       </section>
     </>
