@@ -86,6 +86,7 @@ const ContactForm = () => {
   const handleBlur = (event) => {
     const { name } = event.target;
     setTouched({ ...touched, [name]: true });
+    validateForm();
   };
 
   return (
