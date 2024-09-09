@@ -69,6 +69,58 @@ const ContactForm = () => {
     return isValid;
   };
 
+  const validateInput = (name) => {
+    const newErrors = { ...errors };
+    let isValid = true;
+
+    switch (name) {
+      case "firstname":
+        if (!formData.firstname.trim()) {
+          newErrors.firstname = "First name is required";
+          isValid = false;
+        } else {
+          newErrors.firstname = "";
+        }
+        break;
+      case "email":
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+          newErrors.email = "Invalid email address";
+          isValid = false;
+        } else {
+          newErrors.email = "";
+        }
+        break;
+      case "phone":
+        if (formData.phone.trim() === "") {
+          newErrors.phone = "Phone number is required";
+          isValid = false;
+        } else {
+          newErrors.phone = "";
+        }
+        break;
+      case "subject":
+        if (formData.subject.trim() === "") {
+          newErrors.subject = "Subject is required";
+          isValid = false;
+        } else {
+          newErrors.subject = "";
+        }
+        break;
+      case "message":
+        if (formData.message.trim() === "") {
+          newErrors.message = "Message is required";
+          isValid = false;
+        } else {
+          newErrors.message = "";
+        }
+        break;
+      default:
+        break;
+    }
+
+    setErrors(newErrors);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -80,13 +132,13 @@ const ContactForm = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     setTouched({ ...touched, [name]: true });
-    validateForm();
+    validateInput(name);
   };
 
   const handleBlur = (event) => {
     const { name } = event.target;
     setTouched({ ...touched, [name]: true });
-    validateForm();
+    validateInput(name);
   };
 
   return (
