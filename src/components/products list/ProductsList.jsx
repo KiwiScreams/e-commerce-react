@@ -4,6 +4,7 @@ import "./ProductsList.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import RelatedProducts from "../related products/RelatedProducts";
+import Cart from "../../pages/cart/Cart";
 
 const ProductsList = ({ popular }) => {
   const [products, setProducts] = useState([]);
@@ -17,17 +18,24 @@ const ProductsList = ({ popular }) => {
   const popularProducts = popular
     ? products.filter((product) => product.rating > 4)
     : products;
+  const [cart, setCart] = useState([]);
 
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
   return (
     <>
       <section className="product-list-section">
         <div className="product-list">
           {products.length > 0 &&
             popularProducts.map((product) => (
-              <div key={product.id}>
-                <Product product={product} />
-              </div>
+              <Product
+                key={product.id}
+                product={product}
+                addToCart={addToCart}
+              />
             ))}
+          <Cart cart={cart} />
         </div>
       </section>
     </>

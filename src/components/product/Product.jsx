@@ -2,16 +2,20 @@ import "./Product.css";
 import { useNavigate } from "react-router-dom";
 import cartIcon from "../../assets/images/products/cart.svg";
 import RelatedProducts from "../related products/RelatedProducts";
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   const navigate = useNavigate();
   const originalPrice = product.price;
   const discountPercentage = product.discount;
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
   const handleNavigateToDetailPage = () => {
-    navigate(`/product/${product.id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // navigate(`/product/${product.id}`);
+    // window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
   return (
     <>
       <section className="product" onClick={handleNavigateToDetailPage}>
@@ -35,7 +39,7 @@ const Product = ({ product }) => {
             <span className="current-price">${currentPrice.toFixed(2)}</span>
             <span className="price">${originalPrice.toFixed(2)}</span>
           </h3>
-          <button>
+          <button onClick={handleAddToCart}>
             <img src={cartIcon} alt="" />
             Add
           </button>
