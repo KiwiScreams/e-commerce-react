@@ -48,6 +48,18 @@ const ContactForm = () => {
     setErrors(newErrors);
     return isValid;
   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm()) {
+      console.log(formData);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: "" });
+  };
   return (
     <>
       <section className="contact-form-section">
