@@ -27,10 +27,8 @@ function App() {
         document.title = "Nest | Shop";
         break;
       case "/signup":
-        document.title = "Nest | Sign Up";
-        break;
-      case "/singin":
-        document.title = "Nest | Sign In";
+      case "/signin":
+        document.title = "Nest | Auth";
         break;
       case "/admin":
         document.title = "Nest | Admin";
