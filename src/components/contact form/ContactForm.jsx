@@ -50,8 +50,17 @@ const ContactForm = () => {
       isValid = false;
     }
 
+    if (isValid) {
+      const newErrors = {};
+      Object.keys(errors).forEach((key) => {
+        newErrors[key] = "";
+      });
+      setErrors(newErrors);
+    } else {
+      setErrors(newErrors);
+    }
+
     setIsValid(isValid);
-    setErrors(newErrors);
     return isValid;
   };
 
@@ -134,9 +143,7 @@ const ContactForm = () => {
               onChange={handleChange}
             />
             {errors.message && <div className="error">{errors.message}</div>}
-            <button type="submit">
-              Send message
-            </button>
+            <button type="submit">Send message</button>
           </form>
         </div>
         <div className="image-container">
