@@ -66,6 +66,7 @@ const ContactForm = () => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: "" });
+    validateForm();
   };
 
   return (
@@ -133,7 +134,7 @@ const ContactForm = () => {
               onChange={handleChange}
             />
             {errors.message && <div className="error">{errors.message}</div>}
-            <button type="submit" disabled={!isValid}>
+            <button type="submit">
               Send message
             </button>
           </form>
