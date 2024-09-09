@@ -25,8 +25,7 @@ const ProductsList = ({ popular }) => {
         <div className="product-list">
           {products.length > 0 &&
             popularProducts.map((product) => (
-              <Product key={product.id}
-              />
+              <Product key={product.id} product={product} />
             ))}
         </div>
       </section>
