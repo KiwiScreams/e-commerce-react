@@ -32,7 +32,8 @@ const ProductsList = ({ popular }) => {
               <Product
                 key={product.id}
                 product={product}
-                addToCart={addToCart}
+                cart={cart}
+                setCart={setCart}
               />
             ))}
           <Cart cart={cart} />

@@ -2,7 +2,7 @@ import "./Product.css";
 import { useNavigate } from "react-router-dom";
 import cartIcon from "../../assets/images/products/cart.svg";
 import RelatedProducts from "../related products/RelatedProducts";
-const Product = ({ product, addToCart }) => {
+const Product = ({ product, cart, setCart }) => {
   const navigate = useNavigate();
   const originalPrice = product.price;
   const discountPercentage = product.discount;
@@ -12,8 +12,11 @@ const Product = ({ product, addToCart }) => {
     // navigate(`/product/${product.id}`);
     // window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const handleAddToCart = () => {
-    addToCart(product);
+
+  const handleAddToCart = (product) => {
+    console.log("Adding to cart:", product);
+    setCart([...cart, product]);
+    console.log("Cart:", cart);
   };
 
   return (
