@@ -1,6 +1,21 @@
 import "./ContactForm.css";
 import formImage from "../../assets/images/contact images/contact.png";
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    firstname: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
   return (
     <>
       <section className="contact-form-section">
@@ -44,11 +59,7 @@ const ContactForm = () => {
                 placeholder="Your Subject"
               />
             </div>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="..."
-            ></textarea>
+            <textarea name="message" id="message" placeholder="..."></textarea>
             <button>Send message</button>
           </form>
         </div>
