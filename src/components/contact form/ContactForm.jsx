@@ -125,7 +125,32 @@ const ContactForm = () => {
     event.preventDefault();
     if (validateForm()) {
       console.log(formData);
+      resetForm();
     }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      firstname: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+    setErrors({
+      firstname: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+    setTouched({
+      firstname: false,
+      email: false,
+      phone: false,
+      subject: false,
+      message: false,
+    });
   };
 
   const handleChange = (event) => {
