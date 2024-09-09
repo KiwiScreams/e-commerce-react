@@ -422,6 +422,41 @@
           "warnings": "bad"
         }
       ]
+    },
+    {
+      "id": "10acc409-53d5-4e75-a452-b1ae7bc10ede",
+      "name": "MILK",
+      "description": "milk",
+      "discount": 0,
+      "price": 0,
+      "image": "https://www.heritagefoods.in/blog/wp-content/uploads/2020/12/shutterstock_539045662.jpg",
+      "catagory": ["Milks & Dairies"],
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
     }
   ],
   "comments": [
