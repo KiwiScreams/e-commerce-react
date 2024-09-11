@@ -7,6 +7,8 @@ const SubscribeInput = () => {
   const [error, setError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState("");
+  const [showSuccessPanel, setShowSuccessPanel] = useState(false);
+
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setEmail(inputValue);
@@ -16,6 +18,7 @@ const SubscribeInput = () => {
       setError("");
     }
   };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (error) {
@@ -24,7 +27,12 @@ const SubscribeInput = () => {
     setSubmittedEmail(email);
     setEmail("");
     setIsSubmitted(true);
+    setShowSuccessPanel(true);
     console.log("Form submitted:", email);
+
+    setTimeout(() => {
+      setShowSuccessPanel(false);
+    }, 3000);
   };
 
   return (
@@ -40,7 +48,8 @@ const SubscribeInput = () => {
         <button onClick={handleFormSubmit}>Subscribe</button>
         {error && <div className="error-message">{error}</div>}
       </div>
-      {isSubmitted ? <SuccessPanel email={submittedEmail} /> : null}
+      {showSuccessPanel ? <SuccessPanel email={submittedEmail} /> : null} // Use
+      showSuccessPanel state variable
     </>
   );
 };
