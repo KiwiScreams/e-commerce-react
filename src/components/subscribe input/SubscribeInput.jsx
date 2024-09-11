@@ -1,12 +1,10 @@
 import "./SubscribeInput.css";
 import { useState } from "react";
-import SuccessPanel from "./SuccessPanel"; // Import the SuccessPanel component
-
+import SuccessPanel from "./SuccessPanel";
 const SubscribeInput = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false); // New state variable to track form submission
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setEmail(inputValue);
@@ -16,21 +14,19 @@ const SubscribeInput = () => {
       setError("");
     }
   };
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (error) {
       return;
     }
-    setIsSubmitted(true); // Set isSubmitted to true when form is submitted
+    setIsSubmitted(true);
     console.log("Form submitted:", email);
     setEmail("");
   };
-
   return (
     <>
       {isSubmitted ? (
-        <SuccessPanel email={email} /> // Render SuccessPanel when form is submitted
+        <SuccessPanel email={email} />
       ) : (
         <div className="input-container-subscire">
           <input
