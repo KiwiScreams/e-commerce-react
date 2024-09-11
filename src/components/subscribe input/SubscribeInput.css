@@ -30,3 +30,14 @@
   right: 0;
   width: 158px;
 }
+.input-container-subscire .error-message
+{
+  color: var(--red-clr);
+  font-size: var(--font-size-18px);
+  position: absolute;
+  left: 20px;
+}
+.input-container-subscire .invalid-input
+{
+  border: 1px solid var(--red-clr);
+}
