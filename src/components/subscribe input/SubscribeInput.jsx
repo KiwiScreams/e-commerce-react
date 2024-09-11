@@ -22,16 +22,21 @@ const SubscribeInput = () => {
   };
   return (
     <>
-      <div className="input-container-subscire">
-        <input
-          type="email"
-          placeholder="Your email address"
-          value={email}
-          onChange={handleInputChange}
-        />
-        {error && <div className="error-message">{error}</div>}
-        <button onClick={handleFormSubmit}>Subscribe</button>
-      </div>
+      return (
+      <>
+        <div className="input-container-subscire">
+          <input
+            type="email"
+            placeholder="Your email address"
+            value={email}
+            onChange={handleInputChange}
+            className={error ? "invalid-input" : ""}
+          />
+          {error && <div className="error-message">{error}</div>}
+          <button onClick={handleFormSubmit}>Subscribe</button>
+        </div>
+      </>
+      );
     </>
   );
 };

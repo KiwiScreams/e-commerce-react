@@ -30,9 +30,14 @@
   right: 0;
   width: 158px;
 }
-.input-container-subscire .error-message {
+.input-container-subscire .error-message
+{
   color: red;
   font-size: var(--font-size-18px);
   position: absolute;
   left: 20px;
+}
+.input-container-subscire .invalid-input
+{
+  border: 1px solid red;
 }
