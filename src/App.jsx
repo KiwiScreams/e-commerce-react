@@ -43,7 +43,6 @@ function App() {
   }, [location]);
   return (
     <>
-      <SuccessPanel />
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
