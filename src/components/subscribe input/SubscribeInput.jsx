@@ -1,10 +1,12 @@
 import "./SubscribeInput.css";
 import SuccessPanel from "../success panel/SuccessPanel";
 import { useState } from "react";
+
 const SubscribeInput = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setEmail(inputValue);
@@ -19,27 +21,41 @@ const SubscribeInput = () => {
     if (error) {
       return;
     }
+    setSubmittedEmail(email);
+    setEmail("");
     setIsSubmitted(true);
     console.log("Form submitted:", email);
-    setEmail("");
   };
+
   return (
     <>
-      {isSubmitted ? (
-        <SuccessPanel email={email} />
-      ) : (
-        <div className="input-container-subscire">
-          <input
-            type="email"
-            placeholder="Your email address"
-            value={email}
-            onChange={handleInputChange}
-            className={error ? "invalid-input" : ""}
-          />
-          {error && <div className="error-message">{error}</div>}
-          <button onClick={handleFormSubmit}>Subscribe</button>
-        </div>
-      )}
+      <div className="input-container-subscire">
+        {isSubmitted ? (
+          <>
+            <SuccessPanel email={submittedEmail} />
+            <input
+              type="email"
+              placeholder="Your email address"
+              value={email}
+              onChange={handleInputChange}
+              className={error ? "invalid-input" : ""}
+            />
+            {error && <div className="error-message">{error}</div>}
+          </>
+        ) : (
+          <>
+            <input
+              type="email"
+              placeholder="Your email address"
+              value={email}
+              onChange={handleInputChange}
+              className={error ? "invalid-input" : ""}
+            />
+            {error && <div className="error-message">{error}</div>}
+            <button onClick={handleFormSubmit}>Subscribe</button>
+          </>
+        )}
+      </div>
     </>
   );
 };
