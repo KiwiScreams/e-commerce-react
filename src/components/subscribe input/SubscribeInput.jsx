@@ -1,6 +1,6 @@
 import "./SubscribeInput.css";
+import SuccessPanel from "../success panel/SuccessPanel";
 import { useState } from "react";
-import SuccessPanel from "./SuccessPanel";
 const SubscribeInput = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
