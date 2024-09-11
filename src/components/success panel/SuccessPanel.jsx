@@ -1,7 +1,9 @@
 import "./SuccessPanel.css";
-const SuccessPanel = () => {
+const SuccessPanel = (props) => {
     return ( 
-        <></>
+        <>
+        {props}
+        </>
      );
 }
  
