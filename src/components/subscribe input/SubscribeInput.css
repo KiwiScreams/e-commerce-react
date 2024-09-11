@@ -32,12 +32,12 @@
 }
 .input-container-subscire .error-message
 {
-  color: red;
+  color: var(--red-clr);
   font-size: var(--font-size-18px);
   position: absolute;
   left: 20px;
 }
 .input-container-subscire .invalid-input
 {
-  border: 1px solid red;
+  border: 1px solid var(--red-clr);
 }
