@@ -8,16 +8,13 @@ const SubscribeInput = () => {
     setEmail(inputValue);
     if (!inputValue.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
       setError("Please enter a valid email address");
-    }
-    else
-    {
+    } else {
       setError("");
     }
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    if (error)
-      {
+    if (error) {
       return;
     }
     console.log("Form submitted:", email);
@@ -32,7 +29,7 @@ const SubscribeInput = () => {
           value={email}
           onChange={handleInputChange}
         />
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="error-message">{error}</div>}
         <button onClick={handleFormSubmit}>Subscribe</button>
       </div>
     </>
