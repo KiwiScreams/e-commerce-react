@@ -39,8 +39,8 @@ const SubscribeInput = () => {
         />
         <button onClick={handleFormSubmit}>Subscribe</button>
         {error && <div className="error-message">{error}</div>}
-        {isSubmitted ? <SuccessPanel email={submittedEmail} /> : null}
       </div>
+      {isSubmitted ? <SuccessPanel email={submittedEmail} /> : null}
     </>
   );
 };
