@@ -1,8 +1,14 @@
 import "./SubscribeInput.css";
+import SuccessPanel from "../success panel/SuccessPanel";
 import { useState } from "react";
+
 const SubscribeInput = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
+  const [showSuccessPanel, setShowSuccessPanel] = useState(false);
+
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setEmail(inputValue);
@@ -12,31 +18,38 @@ const SubscribeInput = () => {
       setError("");
     }
   };
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (error) {
       return;
     }
-    console.log("Form submitted:", email);
+    setSubmittedEmail(email);
     setEmail("");
+    setIsSubmitted(true);
+    setShowSuccessPanel(true);
+    console.log("Form submitted:", email);
+
+    setTimeout(() => {
+      setShowSuccessPanel(false);
+    }, 3000);
   };
+
   return (
     <>
-      return (
-      <>
-        <div className="input-container-subscire">
-          <input
-            type="email"
-            placeholder="Your email address"
-            value={email}
-            onChange={handleInputChange}
-            className={error ? "invalid-input" : ""}
-          />
-          {error && <div className="error-message">{error}</div>}
-          <button onClick={handleFormSubmit}>Subscribe</button>
-        </div>
-      </>
-      );
+      <div className="input-container-subscire">
+        <input
+          type="email"
+          placeholder="Your email address"
+          value={email}
+          onChange={handleInputChange}
+          className={error ? "invalid-input" : ""}
+        />
+        <button onClick={handleFormSubmit}>Subscribe</button>
+        {error && <div className="error-message">{error}</div>}
+      </div>
+      {showSuccessPanel ? <SuccessPanel email={submittedEmail} /> : null} // Use
+      showSuccessPanel state variable
     </>
   );
 };
