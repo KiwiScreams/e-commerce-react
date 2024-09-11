@@ -3,10 +3,10 @@ const SuccessPanel = ({ email }) => {
   return (
     <>
       <div className="success-panel">
-        <h2>Success!</h2>
-        <p>
-          Your email is: <span>{email}</span>
-        </p>
+        <div className="success-message">
+          <h2>Thank you for subscribing!</h2>
+          <p>We'll send updates to {email}.</p>
+        </div>
       </div>
     </>
   );
