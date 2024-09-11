@@ -4,7 +4,9 @@ const SuccessPanel = ({ email }) => {
     <>
       <div className="success-panel">
         <h2>Success!</h2>
-        <p>Your email is: {email}</p>
+        <p>
+          Your email is: <span>{email}</span>
+        </p>
       </div>
     </>
   );

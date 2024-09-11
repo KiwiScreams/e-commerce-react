@@ -13,6 +13,7 @@ import Shop from "./pages/shop/Shop";
 import Admin from "./pages/admin panel/Admin";
 import SignUp from "./pages/account/signup/SignUp";
 import SignIn from "./pages/account/signin/SignIn";
+import SuccessPanel from "./components/success panel/SuccessPanel";
 function App() {
   const location = useLocation();
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
   }, [location]);
   return (
     <>
+      <SuccessPanel />
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
