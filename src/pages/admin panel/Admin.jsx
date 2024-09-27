@@ -9,7 +9,7 @@ const Admin = () => {
     <>
       <section className="admin-panel-section">
         <Navigation />
-        <div>
+        <div style={{width: "100%"}}>
           <Routes>
             <Route path="products" element={<Products />} />
             <Route path="add" element={<AddProduct />} />

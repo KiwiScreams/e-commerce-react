@@ -430,7 +430,9 @@
       "discount": 0,
       "price": 0,
       "image": "https://www.heritagefoods.in/blog/wp-content/uploads/2020/12/shutterstock_539045662.jpg",
-      "catagory": ["Milks & Dairies"],
+      "catagory": [
+        "Milks & Dairies"
+      ],
       "color": "",
       "more": "",
       "rating": 0,
@@ -457,6 +459,100 @@
           "warnings": ""
         }
       ]
+    },
+    {
+      "id": "550e5937-ee80-470d-a583-f8165cd39876",
+      "name": "New Product",
+      "description": "It's very very new product",
+      "discount": 10,
+      "price": 50,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+      "catagory": "",
+      "color": "red",
+      "more": "It's a new one",
+      "rating": 4,
+      "company": "Something",
+      "sizes": [
+        {
+          "value": 50,
+          "unit": "ml"
+        },
+        {
+          "value": 100,
+          "unit": "oz"
+        },
+        {
+          "value": 150,
+          "unit": "lb"
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "god",
+          "details": [
+            {
+              "typeOfPacking": "lala",
+              "color": "yellow",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        },
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "electronics"
+    },
+    {
+      "id": "8ac95d68-b660-447a-a656-95236025d042",
+      "name": "Super",
+      "description": "",
+      "discount": 0,
+      "price": 0,
+      "image": "https://jureursicphotography.com/wp-content/uploads/2020/10/2020_02_21_Sephora-Favurite-Box5247.jpg",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "clothing"
     }
   ],
   "comments": [

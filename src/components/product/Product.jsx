@@ -10,8 +10,8 @@ const Product = ({ product }) => {
   const currentPrice =
     originalPrice - originalPrice * (discountPercentage / 100);
   const handleNavigateToDetailPage = () => {
-    // navigate(`/product/${product.id}`);
-    // window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(`/product/${product.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <>

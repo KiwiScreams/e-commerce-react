@@ -1,0 +1,120 @@
+.add-product-section {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.input-container input,
+.input-container textarea,
+.input-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+.input-container input[type="number"] {
+  width: 50%;
+}
+
+.input-container textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.input-container select {
+  width: 50%;
+}
+
+.input-container button[type="button"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button[type="button"]:hover {
+  background-color: #3e8e41;
+}
+
+.input-container span {
+  font-size: 14px;
+  color: #666;
+  margin-left: 10px;
+}
+
+.sizes {
+  margin-top: 20px;
+}
+
+.sizes div {
+  margin-bottom: 10px;
+}
+
+.sizes input[type="number"] {
+  width: 30%;
+}
+
+.sizes select {
+  width: 30%;
+}
+
+.additional-info {
+  margin-top: 20px;
+}
+
+.additional-info div {
+  margin-bottom: 20px;
+}
+
+.additional-info label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.additional-info input[type="text"] {
+  width: 50%;
+}
+
+.additional-info button[type="button"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.additional-info button[type="button"]:hover {
+  background-color: #3e8e41;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #3e8e41;
+}
