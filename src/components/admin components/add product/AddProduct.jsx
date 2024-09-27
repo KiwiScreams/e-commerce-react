@@ -52,7 +52,7 @@ const AddProduct = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     if (name === "price" || name === "discount" || name === "rating") {
-      const isValidNumber = /^\d+(\.\d{1,2})?$/.test(value);
+      const isValidNumber = /^\d+(\.\d+)?$/.test(value);
       if (isValidNumber) {
         const trimmedValue = value.replace(/^0/, "");
         if (name === "rating") {
@@ -235,6 +235,7 @@ const AddProduct = () => {
             name="rating"
             min="0"
             max="5"
+            step="0.1"
             placeholder="Enter product rating"
             value={inputData.rating}
             onChange={handleInputChange}
@@ -358,7 +359,9 @@ const AddProduct = () => {
             Add Additional Info
           </button>
         </div>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </section>
   );
