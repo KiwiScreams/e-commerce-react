@@ -553,6 +553,41 @@
         }
       ],
       "category": "clothing"
+    },
+    {
+      "id": "dff66ecb-b8b7-4640-a4cd-c729f45a1a36",
+      "name": "",
+      "description": "",
+      "discount": 0,
+      "price": 45.495,
+      "image": "",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0.8,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
     }
   ],
   "comments": [
