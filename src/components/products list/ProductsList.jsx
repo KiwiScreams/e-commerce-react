@@ -6,12 +6,8 @@ import { useState, useEffect } from "react";
 import RelatedProducts from "../related products/RelatedProducts";
 import Cart from "../../pages/cart/Cart";
 
-const ProductsList = ({ popular, selectedCategory }) => {
+const ProductsList = ({ popular }) => {
   const [products, setProducts] = useState([]);
-  const filteredProducts = products.filter(
-    (product) => product.category === selectedCategory
-  );
-
   useEffect(() => {
     axios
       .get("http://localhost:8000/products")
@@ -28,9 +24,9 @@ const ProductsList = ({ popular, selectedCategory }) => {
       <section className="product-list-section">
         <div className="product-list">
           {products.length > 0 &&
-            popularProducts
-              .filter((product) => product.category === selectedCategory)
-              .map((product) => <Product key={product.id} product={product} />)}
+            popularProducts.map((product) => (
+              <Product key={product.id} product={product} />
+            ))}
         </div>
       </section>
     </>

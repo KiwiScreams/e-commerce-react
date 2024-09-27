@@ -623,6 +623,42 @@
           "warnings": ""
         }
       ]
+    },
+    {
+      "id": "a3ca1f1a-c6e7-4ba3-a6a1-a1c7e032d3a6",
+      "name": "milk",
+      "description": "",
+      "discount": 0,
+      "price": 0,
+      "image": "https://www.dairycorner.co.in/wp-content/uploads/2018/07/cow-milk.jpg",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "milk&dairies"
     }
   ],
   "comments": [
