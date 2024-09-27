@@ -35,6 +35,9 @@ const SubscribeInput = () => {
     }, 3000);
   };
 
+
+
+  
   return (
     <>
       <div className="input-container-subscire">
@@ -48,8 +51,7 @@ const SubscribeInput = () => {
         <button onClick={handleFormSubmit}>Subscribe</button>
         {error && <div className="error-message">{error}</div>}
       </div>
-      {showSuccessPanel ? <SuccessPanel email={submittedEmail} /> : null} // Use
-      showSuccessPanel state variable
+      {showSuccessPanel ? <SuccessPanel email={submittedEmail} /> : null}
     </>
   );
 };

@@ -553,6 +553,112 @@
         }
       ],
       "category": "clothing"
+    },
+    {
+      "id": "dff66ecb-b8b7-4640-a4cd-c729f45a1a36",
+      "name": "",
+      "description": "",
+      "discount": 0,
+      "price": 45.495,
+      "image": "",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0.8,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
+    },
+    {
+      "id": "e6c272f2-863b-4cc1-bef9-3f22ace8e6c9",
+      "name": "ll",
+      "description": "ll",
+      "discount": 0,
+      "price": 0,
+      "image": "https://cgifurniture.com/wp-content/uploads/2021/08/amazon-product-images-7-types-View02.jpg",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
+    },
+    {
+      "id": "a3ca1f1a-c6e7-4ba3-a6a1-a1c7e032d3a6",
+      "name": "milk",
+      "description": "",
+      "discount": 0,
+      "price": 0,
+      "image": "https://www.dairycorner.co.in/wp-content/uploads/2018/07/cow-milk.jpg",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ],
+      "category": "milk&dairies"
     }
   ],
   "comments": [
