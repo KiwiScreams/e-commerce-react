@@ -588,6 +588,41 @@
           "warnings": ""
         }
       ]
+    },
+    {
+      "id": "e6c272f2-863b-4cc1-bef9-3f22ace8e6c9",
+      "name": "ll",
+      "description": "ll",
+      "discount": 0,
+      "price": 0,
+      "image": "https://cgifurniture.com/wp-content/uploads/2021/08/amazon-product-images-7-types-View02.jpg",
+      "catagory": "",
+      "color": "",
+      "more": "",
+      "rating": 0,
+      "company": "",
+      "sizes": [
+        {
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "additionalInfo": [
+        {
+          "description": "",
+          "details": [
+            {
+              "typeOfPacking": "",
+              "color": "",
+              "quantityPerCase": ""
+            }
+          ],
+          "PackagingDelivery": "",
+          "SuggestedUse": "",
+          "Ingredients": "",
+          "warnings": ""
+        }
+      ]
     }
   ],
   "comments": [

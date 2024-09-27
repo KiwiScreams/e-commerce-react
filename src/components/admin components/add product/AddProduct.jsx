@@ -36,9 +36,14 @@ const AddProduct = () => {
     ],
   });
   const categories = [
-    { value: "electronics", label: "Electronics" },
-    { value: "clothing", label: "Clothing" },
-    { value: "home-goods", label: "Home Goods" },
+    { value: "Milks & Dairies", label: "milk&dairies" },
+    { value: "Wines & Alcohol", label: "wines&alcohol" },
+    { value: "Clothing & Beauty", label: "clothing&beauty" },
+    { value: "Pet Foods & Toy", label: "pet" },
+    { value: "Packaged fast food", label: "fastfood" },
+    { value: "Baking material", label: "bakingmaterial" },
+    { value: "Vegetables & tubers", label: "vegetables&tubers" },
+    { value: "Fresh Seafood", label: "freshseafood" }
   ];
   const navigate = useNavigate();
 

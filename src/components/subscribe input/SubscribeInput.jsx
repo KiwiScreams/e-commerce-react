@@ -35,6 +35,9 @@ const SubscribeInput = () => {
     }, 3000);
   };
 
+
+
+  
   return (
     <>
       <div className="input-container-subscire">
